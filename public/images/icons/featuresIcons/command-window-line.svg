@@ -37,18 +37,18 @@
                       class="primary"/>
             </g>
             <g style="display:block">
-                <path fill="#c4c4c4"
+                <path fill="#c6922b"
                       d="M60.516 90.31c.027 1.048 24.619 8.834 26.631 14.108-3.174 5.556-26.04 13.178-26.08 13.957-.104 1.972-.303 13.463.067 13.272 11.388-5.892 41.123-19.712 41.23-27.189.101-7.017-33.975-23.719-41.748-27.471-.249-.121-.14 11.805-.1 13.323"
                       class="secondary"/>
-                <path fill="none" stroke="#c4c4c4" stroke-linecap="round" stroke-linejoin="round"
+                <path fill="none" stroke="#c6922b" stroke-linecap="round" stroke-linejoin="round"
                       d="M60.516 90.31c.027 1.048 24.619 8.834 26.631 14.108-3.174 5.556-26.04 13.178-26.08 13.957-.104 1.972-.303 13.463.067 13.272 11.388-5.892 41.123-19.712 41.23-27.189.101-7.017-33.975-23.719-41.748-27.471-.249-.121-.14 11.805-.1 13.323"
                       class="secondary"/>
             </g>
             <g style="display:block">
-                <path fill="#c4c4c4"
+                <path fill="#c6922b"
                       d="M146.6 118.283c.02 1.21.244 11.137.223 11.137-8.665.117-33.535.286-43.467.366-.464.004-.186-10.446-.159-11.086.005-.14 43.403-.499 43.403-.417"
                       class="secondary"/>
-                <path fill="none" stroke="#c4c4c4" stroke-linecap="round" stroke-linejoin="round"
+                <path fill="none" stroke="#c6922b" stroke-linecap="round" stroke-linejoin="round"
                       d="M146.6 118.283c.02 1.21.244 11.137.223 11.137-8.665.117-33.535.286-43.467.366-.464.004-.186-10.446-.159-11.086.005-.14 43.403-.499 43.403-.417"
                       class="secondary"/>
             </g>

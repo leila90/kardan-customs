@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+@import "../styles/typography.css";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.toggle {
+  background-color: var(--color-background);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+
+.icon--moon {
+  transition-delay: 200ms;
+  color: var(--color-primary);
+}
+
+.icon--sun {
+  transform: scale(0);
+  color: var(--color-accent);
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+
+
+
+
+
+
+/*:root {*/
+/*  --bg:#07090B;*/
+/*  --amber:#C8922D;*/
+/*  --amber-2:#E8BC62;*/
+/*  --warm:#F7F3EA;*/
+/*  --olive:#8A6D2A;*/
+/*}*/
+/** { box-sizing:border-box; }*/
+/*html,body {*/
+/*  margin:0;*/
+/*  width:100%;*/
+/*  height:100%;*/
+/*  background:var(--bg);*/
+/*  overflow:hidden;*/
+/*  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;*/
+/*}*/
+.stage {
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background:radial-gradient(circle at 48% 50%, rgba(200,146,45,.08), transparent 36%), #07090B;
+  overflow:hidden;
+}
+.base {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  filter:saturate(.96) contrast(1.02) brightness(.86);
+  transform:scale(1.01);
+}
+.shade {
+  position:absolute;
+  inset:0;
+  background:
+          radial-gradient(circle at 55% 50%, rgba(232,188,98,.08), transparent 25%),
+          linear-gradient(90deg, rgba(7,9,11,.34), transparent 35%, rgba(7,9,11,.18));
+  pointer-events:none;
+}
+/*.svg-icon {*/
+/*  position:absolute;*/
+/*  inset:0;*/
+/*  width:100%;*/
+/*  height:100%;*/
+/*  overflow:visible;*/
+/*  pointer-events:none;*/
+/*}*/
+.soft-path {
+  fill:none;
+  stroke:rgba(232,188,98,.22);
+  stroke-width:1.2;
+  stroke-linecap:round;
+  stroke-dasharray:2 18;
+  animation:pathDrift 19s linear infinite;
+}
+.soft-path.white { stroke:rgba(247,243,234,.22); stroke-width:1.05; }
+.soft-path.olive { stroke:rgba(138,109,42,.20); }
+.memory {
+  fill:none;
+  stroke:rgba(232,188,98,.16);
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-dasharray:180 900;
+  stroke-dashoffset:900;
+  filter:url(#softGlow);
+  animation:memoryTrace 18s ease-in-out infinite;
+}
+.hero-core {
+  fill:none;
+  stroke:url(#heroGrad);
+  stroke-width:3.3;
+  stroke-linecap:round;
+  stroke-dasharray:230 1100;
+  stroke-dashoffset:1100;
+  filter:url(#heroGlow);
+  animation:heroTrace 16s cubic-bezier(.32,.05,.18,1) infinite;
+}
+.plane-field {
+  opacity:.0;
+  animation:fieldBreath 16s ease-in-out infinite;
+}
+.k-birth {
+  opacity:0;
+  animation:kBirth 16s ease-in-out infinite;
+}
+.cluster { opacity:.08; animation:clusterPulse 16s ease-in-out infinite; }
+.cluster text {
+  fill:rgba(247,243,234,.82);
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:-.5px;
+}
+.cluster .sub {
+  fill:rgba(232,188,98,.72);
+  font-size:14px;
+  font-weight:500;
+}
+.c1 { animation-delay:1.7s; }
+.c2 { animation-delay:3.1s; }
+.c3 { animation-delay:4.5s; }
+.c4 { animation-delay:5.9s; }
+.c5 { animation-delay:7.1s; }
+.c6 { animation-delay:8.2s; }
+.outcome-pulse { opacity:.0; animation:outcomePulse 16s ease-in-out infinite; }
+.o1 { animation-delay:10.7s; } .o2 { animation-delay:11.25s; } .o3 { animation-delay:11.85s; } .o4 { animation-delay:12.45s; } .o5 { animation-delay:13.0s; }
+.particle {
+  fill:rgba(232,188,98,.72);
+  filter:url(#tinyGlow);
+  opacity:.0;
+  animation:particleWake 16s ease-in-out infinite;
+}
+.p2 { animation-delay:1.3s; } .p3 { animation-delay:2.4s; } .p4 { animation-delay:3.5s; } .p5 { animation-delay:4.9s; } .p6 { animation-delay:6.1s; } .p7 { animation-delay:7.2s; }
+.hero-orb { filter:url(#orbGlow); }
+.orb-body { fill:var(--warm); }
+.orb-aura { fill:rgba(232,188,98,.22); }
+.mask-fade {
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 53% 52%, transparent 36%, rgba(7,9,11,.14) 68%, rgba(7,9,11,.4) 100%);
+  pointer-events:none;
+}
+.debug-label {
+  position:absolute;
+  left:24px;
+  bottom:20px;
+  color:rgba(247,243,234,.5);
+  font-size:12px;
+  direction:ltr;
+}
+@keyframes pathDrift { to { stroke-dashoffset:-220; } }
+@keyframes heroTrace {
+  0% { stroke-dashoffset:1100; opacity:0; }
+  7% { opacity:.95; }
+  51% { stroke-dashoffset:0; opacity:1; }
+  62% { opacity:.93; }
+  77% { opacity:.18; }
+  100% { stroke-dashoffset:-360; opacity:0; }
+}
+@keyframes memoryTrace {
+  0%,12% { stroke-dashoffset:900; opacity:0; }
+  34% { opacity:.65; }
+  65% { stroke-dashoffset:0; opacity:.24; }
+  100% { stroke-dashoffset:-520; opacity:0; }
+}
+@keyframes clusterPulse {
+  0%,100% { opacity:.06; transform:scale(.985); }
+  10%,24% { opacity:.92; transform:scale(1); }
+  31% { opacity:.18; transform:scale(.995); }
+}
+@keyframes fieldBreath {
+  0%,46%,100% { opacity:.0; transform:scaleX(.96); }
+  55% { opacity:.36; transform:scaleX(1); }
+  62% { opacity:.18; transform:scaleX(.99); }
+}
+@keyframes kBirth {
+  0%,58%,100% { opacity:0; transform:scale(.96); }
+  66%,82% { opacity:.85; transform:scale(1); }
+  90% { opacity:.15; transform:scale(1.01); }
+}
+@keyframes outcomePulse {
+  0%,100% { opacity:0; transform:translateX(-8px); }
+  10%,34% { opacity:.95; transform:translateX(0); }
+  52% { opacity:.12; transform:translateX(4px); }
+}
+@keyframes particleWake {
+  0%,100% { opacity:0; transform:scale(.8); }
+  16%,40% { opacity:.9; transform:scale(1); }
+  60% { opacity:.25; transform:scale(.9); }
+}
+@media (max-width: 768px) {
+  .base { object-fit:cover; object-position:47% center; filter:saturate(.95) contrast(1.03) brightness(.78); }
+  svg { transform:scale(1.24); transform-origin:50% 50%; }
+  .cluster text { font-size:16px; }
+  .cluster .sub { font-size:11px; }
+  .debug-label { display:none; }
+}
+

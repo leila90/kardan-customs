@@ -202,10 +202,10 @@
                   d="M18.399.102C8.553.076-9.638.013-18.399-.102" class="primary" style="display:block"
                   transform="translate(123.051 162.323)"/>
             <g mask="url(#w)" style="display:block">
-                <path fill="none" stroke="#c4c4c4" stroke-linecap="round" stroke-linejoin="round"
+                <path fill="none" stroke="#c6922b" stroke-linecap="round" stroke-linejoin="round"
                       d="M27.675 176.996c-.128-7.508-.192-37.439-.103-44.825.054-4.491.889-5.138 7.754-5.086 11.197.085 34.854-.204 47.203-.087 7.399.07 8.125.915 8.308 5.095.331 7.565.321 37.399.345 44.987"
                       class="secondary"/>
-                <path fill="#c4c4c4"
+                <path fill="#c6922b"
                       d="M27.675 176.996c-.128-7.508-.192-37.439-.103-44.825.054-4.491.889-5.138 7.754-5.086 11.197.085 34.854-.204 47.203-.087 7.399.07 8.125.915 8.308 5.095.331 7.565.321 37.399.345 44.987"
                       class="secondary"/>
             </g>

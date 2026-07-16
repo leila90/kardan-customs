@@ -1,30 +1,33 @@
 import Image from "next/image";
+import FooterHeader from "@/components/sections/footer/footer-header";
 
 export default function Footer() {
     return (
         <section id="footer">
-            <footer className='bg-black pt-30 pb-12 px-4 sm:px-6 lg:px-8'>
+            <FooterHeader />
+            <footer className='bg-[var(--color-primary)] pt-50 pb-12 px-4 sm:px-6 lg:px-8'>
                 <div className='w-full max-w-7xl mx-auto'>
-                    <div className="w-full flex flex-col mb-20 items-center text-center">
-                        <a href="https://prebuiltui.com">
-                            <Image src={'/logo-ww.png'} alt={'logo'} height={150} width={150}/>
-                        </a>
-                        <div
-                            className='w-full h-px mt-8 bg-linear-to-r from-black via-white/50 to-black'></div>
-                        <p className='text-sm text-white/60 mt-6 leading-relaxed'>
-                            PrebuiltUI is a growing collection of beautifully designed, production-ready Tailwind
-                            CSS UI components.
-                        </p>
-                    </div>
+                    {/*<div className="w-full flex flex-col mb-20 items-center text-center">*/}
+                    {/*    /!*<a href="https://prebuiltui.com">*!/*/}
+                    {/*    /!*    <Image src={'/logo-ww.png'} alt={'logo'} height={150} width={150}/>*!/*/}
+                    {/*    /!*</a>*!/*/}
+                    {/*    <div*/}
+                    {/*        className='w-full h-px mt-8 bg-linear-to-r from-[var(--color-primary)] via-[var(--color-border)] to-[var(--color-primary)]'></div>*/}
+                    {/*    <p className='text-sm text-white/60 mt-6 leading-relaxed'>*/}
+                    {/*        PrebuiltUI is a growing collection of beautifully designed, production-ready Tailwind*/}
+                    {/*        CSS UI components.*/}
+                    {/*    </p>*/}
+                    {/*</div>*/}
                     <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
 
                         <div
                             className="w-full md:w-[45%] lg:w-[35%] flex flex-col items-center md:items-start text-center md:text-left">
-                            <h4 className="text-2xl font-semibold tracking-tight text-balance text-white">
-                                MinKits Team
-                            </h4>
+                            <Image src={"/images/logo/logo-f-w.png"} alt={"logo"} width={200} height={100} ></Image>
+                            {/*<h4 className="text-2xl font-semibold tracking-tight text-balance text-white">*/}
+                            {/*    Kardan Customs*/}
+                            {/*</h4>*/}
                             <div
-                                className='w-full  h-px my-4 bg-linear-to-r from-white/25 to-black'></div>
+                                className='w-full  h-px my-4 bg-linear-to-r from-[var(--color-border)] to-[var(--color-primary)]'></div>
                             <p className='text-sm text-white/60 max-w-sm leading-relaxed'>
                                 PrebuiltUI is a growing collection of beautifully designed, production-ready Tailwind
                                 CSS UI components.
@@ -68,20 +71,20 @@ export default function Footer() {
                             <div
                                 className="flex items-center border gap-2 border-white/20 h-13 max-w-80 w-full rounded-full overflow-hidden mt-4">
                                 <input type="email" placeholder="Enter your email.."
-                                       className="w-full h-full pl-6 outline-none text-sm bg-transparent text-white placeholder-white/60 placeholder:text-xs"
+                                       className="w-full h-full p-6 outline-none text-sm bg-transparent text-white placeholder-white/60 placeholder:text-xs"
                                        required/>
                                 <button type="submit"
-                                        className="bg-linear-to-b from-zinc-700 to-zinc-500 active:scale-95 transition w-56 h-10 rounded-full text-sm text-white cursor-pointer mr-1.5">Subscribe
+                                        className="bg-linear-to-b from-zinc-700 to-zinc-500 active:scale-95 transition w-56 h-10 rounded-full text-sm text-white cursor-pointer mx-1.5">Subscribe
                                 </button>
                             </div>
                         </div>
 
                     </div>
 
-                    <div className='w-full h-px mt-16 mb-4 bg-white/50'></div>
+                    <div className='w-full h-px mt-16 mb-4 bg-[var(--color-border)]'></div>
 
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className='text-xs text-white/60'>© 2025 PrebuiltUI</p>
+                        <p className='text-xs text-white/60'>© 2026 Kardan Customs</p>
                         <div className="flex items-center gap-6">
                             <a href='#' className='text-xs text-white/60 hover:text-white transition-colors'>Terms &
                                 Conditions</a>

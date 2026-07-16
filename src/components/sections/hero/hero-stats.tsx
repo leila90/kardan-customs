@@ -1,4 +1,4 @@
-const stats = [
+const heroStats = [
     {
         value: "10+",
         label: "سال تجربه",
@@ -16,7 +16,7 @@ export default function HeroStats() {
     return (
         <div
             className="
-                mt-14
+                mt-10
                 grid
                 grid-cols-3
                 gap-8
@@ -25,7 +25,7 @@ export default function HeroStats() {
                 pt-8
             "
         >
-            {stats.map((item) => (
+            {heroStats.map((item) => (
                 <div
                     key={item.label}
                     className="text-center"

@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import {Locale, NextIntlClientProvider} from 'next-intl';
-import {inter, yekan} from "../lib/font";
+import {inter, yekan} from "@/lib/font";
+import Navbar from "@/components/layout/navbar/navbar";
+import {getTranslations} from "next-intl/server";
+import NavbarLinks from "@/components/layout/navbar/navbar-links";
+import Footer from "@/components/sections/footer/footer";
 
 const geistSans = Geist({
   variable: "--fonts-geist-sans",
@@ -32,13 +36,34 @@ export default async function LocaleLayout({
       locale === "fa"
           ? yekan.className
           : inter.className;
+
+    const t = await getTranslations("Navbar");
+
+    const labels = {
+        home: t("home"),
+        about: t("about"),
+        services: t("services"),
+        projects: t("projects"),
+        blog: t("blog"),
+        contact: t("contact"),
+    };
+
   return (
+      <NextIntlClientProvider>
       <div
-          className={fontClass}
+          className={`${fontClass}`}
           dir={locale === "fa" ? "rtl" : "ltr"}
       >
-        {children}
+          <Navbar
+              labels={labels}
+              cta={t("cta")}
+          />
+          <div className={'bg-white'}>
+              {children}
+          </div>
+          <Footer />
       </div>
+      </NextIntlClientProvider>
 
   );
 }

@@ -1,12 +1,12 @@
-export default function FooterHeader() {
+export default function HeroFooter() {
     return (
-        <section className="mt-30">
-            <div className="bg-[var(--color-background)] -mb-20 relative rounded-br-4xl rounded-bl-4xl">
-                <div
-                    className="bg-[url('/images/footer/footer-header.png')] opacity-20 relative z-2 -mt-20 h-40 w-full bg-cover bg-no-repeat">
+        <section>
+                <div className="bg-white relative rounded-tr-4xl rounded-tl-4xl">
+                    <div
+                        className="bg-[url('/images/footer/hero-footer.png')] opacity-20  relative z-2 -mt-20 h-40 w-full bg-cover bg-no-repeat">
 
+                    </div>
                 </div>
-            </div>
         </section>
     )
 }

@@ -1,8 +1,8 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 
 interface NavLinkProps {
     href: string;
@@ -17,36 +17,30 @@ export default function NavLink({
 
     const isActive =
         pathname === href ||
-        pathname.endsWith(href);
+        pathname.startsWith(`${href}/`);
 
     return (
         <Link
             href={href}
             className={clsx(
-                "relative text-sm transition-colors duration-300",
-                {
-                    "text-[var(--color-accent)] font-medium":
-                    isActive,
-                    "hover:text-[var(--color-accent)]":
-                        !isActive,
-                }
+                "relative py-2 transition-all duration-300  font-medium",
+
+                isActive
+                    ? "text-[var(--color-accent)] font-medium"
+                    : "text-[var(--color-secondary)] hover:text-[var(--color-accent)]"
             )}
         >
             {children}
 
-            {isActive && (
-                <span
-                    className="
-            absolute
-            -bottom-2
-            left-0
-            h-[2px]
-            w-full
-            rounded-full
-            bg-[var(--color-accent)]
-          "
-                />
-            )}
+            <span
+                className={clsx(
+                    "absolute left-0 bottom-0 h-[2px] rounded-full bg-[var(--color-accent)] transition-all duration-300",
+
+                    isActive
+                        ? "w-full"
+                        : "w-0"
+                )}
+            />
         </Link>
     );
 }

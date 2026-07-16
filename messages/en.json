@@ -2,5 +2,21 @@
   "HomePage": {
     "title": "Hello Leila 👋",
     "description": "Website initialized successfully"
+  },
+  "Navbar": {
+    "home": "Home",
+    "about": "Solutions",
+    "services": "About Kardan",
+    "projects": "Trade Horizon",
+    "blog": "Check the route",
+    "contact": "Contact Us",
+    "cta": "Work With Us"
+  },
+  "Hero": {
+    "badge": "Professional Customs Services",
+    "title": "Reliable Customs Solutions for International Trade",
+    "description": "We help businesses navigate customs procedures efficiently and confidently.",
+    "primaryButton": "Work With Us",
+    "secondaryButton": "Our Projects"
   }
 }

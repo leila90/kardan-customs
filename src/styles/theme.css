@@ -13,6 +13,7 @@
 
     /* Semantic */
     --color-primary: var(--graphite);
+    --color-secondary: var(--bright-snow);
 
     --color-background: var(--bright-snow);
     --color-background-secondary: var(--secondary-bg);
@@ -41,6 +42,9 @@
     --section-space-y: 120px;
     --section-space-y-mobile: 72px;
     --content-space-y: 32px;
+
+    --hero-space-y: 150px;
+    --hero-space-y-mobile: 120px;
 }
 
 .dark {

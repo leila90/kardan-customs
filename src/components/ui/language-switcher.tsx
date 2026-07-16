@@ -98,7 +98,8 @@ export default function LanguageSwitcher() {
                     "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm w-30",
                     "bg-white text-zinc-800 hover:bg-zinc-50",
                     "focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500",
-                    "dark:bg-neutral-900 dark:text-black dark:hover:bg-neutral-800"
+                    "dark:bg-neutral-900 dark:text-black dark:hover:bg-neutral-800",
+                    "text-[#7a5520] hover:text-[#3d2800] border-[#9a6e28]/25 bg-[#9a6e28]/6 hover:bg-[#9a6e28]/12 hover:border-[#9a6e28]/40",
                 )}
             >
                 {active && (

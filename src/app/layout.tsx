@@ -9,7 +9,7 @@ export default function RootLayout({
     return (
         <html
             suppressHydrationWarning
-            className={`${inter.variable} ${yekan.variable} bg-blue-50`}>
+            className={`${inter.variable} ${yekan.variable}`}>
         <body>
         <ThemeProvider>
             {children}

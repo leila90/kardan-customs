@@ -1,4 +1,10 @@
 {
+  "Metadata": {
+    "titleTemplate": "%s | Kardan Customs",
+    "defaultTitle": "Kardan Customs | Professional Customs Clearance Solutions",
+    "description": "Kardan Customs provides professional customs clearance, order registration and customs consulting services for international trade with speed, accuracy and transparency.",
+    "ogAlt": "Kardan Customs"
+  },
   "HomePage": {
     "title": "Hello Leila 👋",
     "description": "Website initialized successfully"
@@ -8,9 +14,19 @@
     "about": "Solutions",
     "services": "About Kardan",
     "projects": "Trade Horizon",
-    "blog": "Check the route",
+    "blog": "Knowledge Base",
     "contact": "Contact Us",
     "cta": "Work With Us"
+  },
+  "Blog": {
+    "metaTitle": "Knowledge Base",
+    "metaDescription": "Articles and expert guides from Kardan Customs on customs clearance, order registration and trade regulations.",
+    "heading": "Knowledge Base",
+    "subheading": "Latest articles and expert guides on customs and international trade",
+    "readMore": "Read more",
+    "backToList": "Back to Knowledge Base",
+    "empty": "No articles to show yet.",
+    "minuteRead": "{minutes} min read"
   },
   "Hero": {
     "badge": "Professional Customs Services",

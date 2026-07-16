@@ -1,0 +1,32 @@
+.heading-1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.heading-2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.heading-3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.body-lg {
+    font-size: 1.125rem;
+    line-height: 1.8;
+}
+
+.body-md {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.body-sm {
+    font-size: 0.875rem;
+    line-height: 1.7;
+}

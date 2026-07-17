@@ -27,6 +27,14 @@
 
     --color-border: var(--dust-gray);
 
+    /* Cinematic dark hero (KardanHero) — kept distinct from the light UI
+       theme above by design, but centralized here so a color change only
+       needs to happen in one place. */
+    --hero-bg: #07090b;
+    --hero-text: var(--bright-snow);
+    --hero-accent: var(--amber);
+    --hero-accent-hover: #e8bc62;
+
     /* Radius */
     --radius-sm: 8px;
     --radius-md: 12px;

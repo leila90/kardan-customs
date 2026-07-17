@@ -32,7 +32,6 @@ export default function DecisionRiver({ logoSrc }: Props) {
             const mainPaths = gsap.utils.toArray<SVGPathElement>(".river-main");
             const hubGroups = gsap.utils.toArray<SVGGElement>(".river-hub");
             const sourceLabels = gsap.utils.toArray<SVGTextElement>(".source-label");
-            const logo = root.current?.querySelector(".kardan-shore");
 
             feederPaths.forEach((p) => {
                 const len = p.getTotalLength();
@@ -392,6 +391,10 @@ export default function DecisionRiver({ logoSrc }: Props) {
                     />
                     <foreignObject x="76.4" y="41.5" width="11.2" height="17">
                         <div className="flex h-full w-full items-center justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element --
+                                next/image can't size correctly inside an SVG foreignObject
+                                at this tiny viewBox scale; this is a small decorative logo,
+                                not an LCP element. */}
                             <img
                                 src={logoSrc}
                                 alt=""

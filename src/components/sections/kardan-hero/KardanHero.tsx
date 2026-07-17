@@ -1,47 +1,44 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import DecisionRiver from "./DecisionRiver";
 
 export default function KardanHero() {
+    const t = useTranslations("Hero");
+
     return (
-        <section
-            dir="rtl"
-            className="relative min-h-screen overflow-hidden bg-[#07090B] text-[#F7F3EA]"
-        >
+        <section className="relative min-h-screen overflow-hidden bg-[var(--hero-bg)] text-[var(--hero-text)]">
             <DecisionRiver logoSrc="/logo.png" />
 
             <div className="pointer-events-none relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center px-6 py-24 lg:grid-cols-2 lg:px-10">
                 <div />
 
                 <div className="pointer-events-auto max-w-xl">
-                    <p className="mb-5 text-sm tracking-[0.28em] text-[#C8922D]">
-                        کاردان ترخیص
+                    <p className="mb-5 text-sm tracking-[0.28em] text-[var(--hero-accent)]">
+                        {t("badge")}
                     </p>
 
                     <h1 className="text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-                        پیش از اجرا،
-                        <br />
-                        مسیر تصمیم روشن می‌شود.
+                        {t("title")}
                     </h1>
 
-                    <p className="mt-6 max-w-lg text-base leading-8 text-[#F7F3EA]/70 md:text-lg">
-                        جایی که مقررات، ریسک، هزینه، زمان و اسناد به هم می‌رسند؛ کاردان
-                        مسیر را آرام، قابل فهم و قابل تصمیم می‌کند.
+                    <p className="mt-6 max-w-lg text-base leading-8 text-[var(--hero-text)]/70 md:text-lg">
+                        {t("description")}
                     </p>
 
                     <div className="mt-9 flex flex-wrap gap-3">
                         <a
-                            href="#contact"
-                            className="rounded-full bg-[#C8922D] px-6 py-3 text-sm font-medium text-[#07090B] transition hover:bg-[#E8BC62]"
+                            href="#contactUs"
+                            className="rounded-full bg-[var(--hero-accent)] px-6 py-3 text-sm font-medium text-[var(--hero-bg)] transition hover:bg-[var(--hero-accent-hover)]"
                         >
-                            شروع بررسی پرونده
+                            {t("primaryButton")}
                         </a>
 
                         <a
-                            href="#approach"
-                            className="rounded-full border border-[#F7F3EA]/15 px-6 py-3 text-sm text-[#F7F3EA]/80 transition hover:border-[#C8922D]/60 hover:text-[#F7F3EA]"
+                            href="#services"
+                            className="rounded-full border border-[var(--hero-text)]/15 px-6 py-3 text-sm text-[var(--hero-text)]/80 transition hover:border-[var(--hero-accent)]/60 hover:text-[var(--hero-text)]"
                         >
-                            روش کار کاردان
+                            {t("secondaryButton")}
                         </a>
                     </div>
                 </div>

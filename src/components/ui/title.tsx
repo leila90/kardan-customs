@@ -29,14 +29,11 @@ export default function Title(props: SectionTitleProps
                     </h3>
                     <div className="relative flex flex-col items-end w-[70px] lg:w-[240px] h-full">
                         <div
-                            className={`w-full h-px bg-linear-to-r  from-black via-black/50 to-white/25`}>
+                            className="w-full h-px bg-linear-to-r from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0">
                         </div>
 
                         <p className="m-0 lg:text-[9px] text-[7px] font-bold absolute bottom-1">
-                            <Image src={"/images/logo/logo-f-b.png"} alt={'logo'} width={70} height={100}>
-
-                            </Image>
-                            {/*{brand}*/}
+                            <Image src={"/images/logo/logo-f-b.png"} alt={brand} width={70} height={100} />
                         </p>
                     </div>
                 </div>
@@ -44,7 +41,7 @@ export default function Title(props: SectionTitleProps
                     {/* Divider SVG */}
                     <div className="icon-display">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="0" fill="#000000">
+                            <circle cx="12" cy="12" r="0" fill="var(--color-text-primary)">
                                 <animate attributeName="r" calcMode="spline" dur="1.2s" keySplines=".52,.6,.25,.99"
                                          repeatCount="indefinite" values="0;11"></animate>
                                 <animate attributeName="opacity" calcMode="spline" dur="1.2s"

@@ -10,7 +10,7 @@ export default function KardanHero() {
         <section className="relative min-h-screen overflow-hidden bg-[var(--hero-bg)] text-[var(--hero-text)]">
             <DecisionRiver logoSrc="/logo.png" />
 
-            <div className="pointer-events-none relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center px-6 py-24 lg:grid-cols-2 lg:px-10">
+            <div className="pointer-events-none relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center px-6 py-24 lg:grid-cols-[55fr_45fr] lg:px-10">
                 <div />
 
                 <div className="pointer-events-auto max-w-xl">

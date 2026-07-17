@@ -1,17 +1,11 @@
-export type RiverSource = {
-    id: string;
-    label: string;
-    x: number;
-    y: number;
-    to: string;
-    weight?: number;
-};
+export type RiverNodeTier = "active" | "secondary" | "ghost";
 
-export type RiverHub = {
+export type RiverNode = {
     id: string;
     label: string;
     x: number;
     y: number;
-    level: 1 | 2;
-    subs: string[];
+    tier: RiverNodeTier;
+    /** Sub-branch labels fanning out from this node (only the active "گمرک" cluster has these per the reference). */
+    subs?: string[];
 };

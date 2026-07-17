@@ -2,17 +2,18 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { hubs, sources } from "./riverData";
+import { kardanCenter, riverNodes } from "./riverData";
 
 type Props = {
     logoSrc: string;
 };
 
-function pathToHub(sourceId: string, x1: number, y1: number, x2: number, y2: number) {
-    const bend = sourceId.length % 2 === 0 ? -7 : 7;
-    const mx = (x1 + x2) / 2;
-    const my = (y1 + y2) / 2 + bend;
-    return `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`;
+/** Gentle organic curve from a node out to the Kardan center. */
+function pathToCenter(id: string, x: number, y: number) {
+    const bend = id.length % 2 === 0 ? -6 : 6;
+    const mx = (x + kardanCenter.x) / 2;
+    const my = (y + kardanCenter.y) / 2 + bend;
+    return `M ${x} ${y} Q ${mx} ${my} ${kardanCenter.x} ${kardanCenter.y}`;
 }
 
 function pathBetween(x1: number, y1: number, x2: number, y2: number, bend = 0) {
@@ -24,35 +25,41 @@ function pathBetween(x1: number, y1: number, x2: number, y2: number, bend = 0) {
 export default function DecisionRiver({ logoSrc }: Props) {
     const root = useRef<HTMLDivElement | null>(null);
 
+    const activeNodes = riverNodes.filter((n) => n.tier === "active");
+    const secondaryNodes = riverNodes.filter((n) => n.tier === "secondary");
+    const ghostNodes = riverNodes.filter((n) => n.tier === "ghost");
+    const customsNode = riverNodes.find((n) => n.id === "customs");
+
     useEffect(() => {
         if (!root.current) return;
 
         const ctx = gsap.context(() => {
-            const feederPaths = gsap.utils.toArray<SVGPathElement>(".river-feeder");
-            const mainPaths = gsap.utils.toArray<SVGPathElement>(".river-main");
-            const hubGroups = gsap.utils.toArray<SVGGElement>(".river-hub");
-            const sourceLabels = gsap.utils.toArray<SVGTextElement>(".source-label");
+            const activePaths = gsap.utils.toArray<SVGPathElement>(".path-active");
+            const secondaryPaths = gsap.utils.toArray<SVGPathElement>(".path-secondary");
+            const nodeGroups = gsap.utils.toArray<SVGGElement>(".river-node");
+            const subLabels = gsap.utils.toArray<SVGTextElement>(".hub-sub");
 
-            feederPaths.forEach((p) => {
+            secondaryPaths.forEach((p) => {
                 const len = p.getTotalLength();
                 gsap.set(p, {
-                    strokeDasharray: `${len * 0.08} ${len * 0.92}`,
+                    strokeDasharray: `${len * 0.1} ${len * 0.9}`,
                     strokeDashoffset: len,
-                    opacity: 0.18,
+                    opacity: 0.15,
                 });
             });
 
-            mainPaths.forEach((p) => {
+            activePaths.forEach((p) => {
                 const len = p.getTotalLength();
                 gsap.set(p, {
-                    strokeDasharray: `${len * 0.16} ${len * 0.84}`,
+                    strokeDasharray: `${len * 0.18} ${len * 0.82}`,
                     strokeDashoffset: len,
                     opacity: 0.2,
                 });
             });
 
-            gsap.set(hubGroups, { opacity: 0, scale: 0.96, transformOrigin: "center" });
-            gsap.set(sourceLabels, { opacity: 0 });
+            gsap.set(nodeGroups, { opacity: 0, scale: 0.96, transformOrigin: "center" });
+            gsap.set(subLabels, { opacity: 0 });
+            gsap.set(".ghost-path", { opacity: 0.07 });
             gsap.set(".ambient-thread", { opacity: 0.1 });
             gsap.set(".kardan-shore", { opacity: 0.72, scale: 0.96, transformOrigin: "center" });
 
@@ -76,83 +83,48 @@ export default function DecisionRiver({ logoSrc }: Props) {
 
             const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.2 });
 
-            tl.to(sourceLabels, {
-                opacity: 0.55,
-                duration: 0.8,
-                stagger: { each: 0.05, from: "random" },
-                ease: "sine.out",
+            tl.to(nodeGroups, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.75,
+                stagger: { each: 0.12, from: "random" },
+                ease: "power2.out",
             });
 
             tl.to(
-                feederPaths,
+                secondaryPaths,
                 {
                     strokeDashoffset: 0,
-                    opacity: 0.68,
-                    duration: 3.6,
+                    opacity: 0.4,
+                    duration: 3,
                     ease: "power2.inOut",
-                    stagger: { each: 0.07, from: "random" },
+                    stagger: { each: 0.08, from: "random" },
                 },
-                "<0.2"
+                "-=0.5"
             );
 
             tl.to(
-                ".source-spark",
+                activePaths,
                 {
-                    opacity: 0.9,
-                    scale: 1.35,
-                    duration: 0.7,
-                    yoyo: true,
-                    repeat: 1,
-                    stagger: { each: 0.06, from: "random" },
-                    ease: "sine.inOut",
+                    strokeDashoffset: 0,
+                    opacity: 0.95,
+                    duration: 2.6,
+                    stagger: 0.2,
+                    ease: "power2.inOut",
                 },
-                "<0.1"
+                "-=2.2"
             );
 
             tl.to(
-                hubGroups,
-                {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.75,
-                    stagger: { each: 0.14, from: "random" },
-                    ease: "power2.out",
-                },
-                "-=2.3"
-            );
-
-            tl.to(
-                ".hub-sub",
+                subLabels,
                 {
                     opacity: 0.86,
                     y: 0,
                     duration: 0.45,
-                    stagger: { each: 0.04, from: "random" },
+                    stagger: { each: 0.06, from: "start" },
                     ease: "sine.out",
                 },
-                "-=1.6"
-            );
-
-            tl.to(
-                mainPaths,
-                {
-                    strokeDashoffset: 0,
-                    opacity: 0.85,
-                    duration: 3.2,
-                    stagger: 0.18,
-                    ease: "power2.inOut",
-                },
-                "-=1.5"
-            );
-
-            tl.to(
-                ".main-current-core",
-                {
-                    opacity: 1,
-                    duration: 1,
-                    ease: "sine.out",
-                },
-                "-=2.2"
+                "-=1"
             );
 
             tl.to(
@@ -163,13 +135,13 @@ export default function DecisionRiver({ logoSrc }: Props) {
                     duration: 1.2,
                     ease: "power2.out",
                 },
-                "-=0.8"
+                "-=1.2"
             );
 
             tl.to(
                 ".shore-glow",
                 {
-                    opacity: 0.72,
+                    opacity: 0.75,
                     scale: 1.06,
                     duration: 1.8,
                     ease: "sine.inOut",
@@ -178,39 +150,31 @@ export default function DecisionRiver({ logoSrc }: Props) {
             );
 
             tl.to(
-                [feederPaths, mainPaths, hubGroups, sourceLabels],
+                [secondaryPaths, activePaths, nodeGroups, subLabels],
                 {
-                    opacity: 0.12,
+                    opacity: (i, target) =>
+                        target.classList?.contains("path-active")
+                            ? 0.35
+                            : target.classList?.contains("river-node")
+                              ? 0.7
+                              : 0.12,
                     duration: 2.2,
                     ease: "sine.inOut",
                 },
-                "+=1.4"
-            );
-
-            tl.to(
-                ".shore-glow",
-                {
-                    opacity: 0.28,
-                    scale: 1,
-                    duration: 1.6,
-                    ease: "sine.inOut",
-                },
-                "<"
+                "+=1.6"
             );
         }, root);
 
         return () => ctx.revert();
     }, []);
 
-    const targetLogo = { x: 82, y: 50 };
-
     return (
         <div
             ref={root}
-            className="absolute inset-0 z-0 overflow-hidden bg-[#07090B]"
+            className="absolute inset-0 z-0 overflow-hidden bg-[var(--hero-bg)]"
             aria-hidden="true"
         >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_38%_48%,rgba(200,146,45,0.12),transparent_34%),linear-gradient(90deg,rgba(7,9,11,0.04),rgba(7,9,11,0.3)_64%,rgba(7,9,11,0.78))]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_27%_50%,rgba(200,146,45,0.14),transparent_38%),linear-gradient(90deg,rgba(7,9,11,0.05),rgba(7,9,11,0.35)_58%,rgba(7,9,11,0.82))]" />
 
             <svg
                 className="absolute inset-0 h-full w-full"
@@ -227,144 +191,94 @@ export default function DecisionRiver({ logoSrc }: Props) {
                     </filter>
 
                     <linearGradient id="riverAmber" x1="0" x2="1" y1="0" y2="0">
-                        <stop offset="0%" stopColor="#F7F3EA" stopOpacity="0.15" />
-                        <stop offset="52%" stopColor="#C8922D" stopOpacity="0.8" />
+                        <stop offset="0%" stopColor="#F7F3EA" stopOpacity="0.2" />
+                        <stop offset="48%" stopColor="#C8922D" stopOpacity="0.85" />
                         <stop offset="100%" stopColor="#E8BC62" stopOpacity="0.95" />
-                    </linearGradient>
-
-                    <linearGradient id="riverWhite" x1="0" x2="1" y1="0" y2="0">
-                        <stop offset="0%" stopColor="#F7F3EA" stopOpacity="0.08" />
-                        <stop offset="80%" stopColor="#F7F3EA" stopOpacity="0.88" />
                     </linearGradient>
                 </defs>
 
-                {/* ambient invisible field */}
-                {Array.from({ length: 18 }).map((_, i) => {
-                    const y = 14 + ((i * 9) % 74);
-                    const x1 = 5 + ((i * 13) % 55);
-                    const x2 = x1 + 18 + ((i * 7) % 24);
-                    const bend = i % 2 ? 9 : -9;
+                {/* ambient starfield threads spanning the whole canvas, including the empty text-side */}
+                {Array.from({ length: 16 }).map((_, i) => {
+                    const y = 10 + ((i * 11) % 82);
+                    const x1 = 4 + ((i * 17) % 88);
+                    const x2 = x1 + 12 + ((i * 9) % 22);
+                    const bend = i % 2 ? 7 : -7;
 
                     return (
                         <path
                             key={`ambient-${i}`}
                             className="ambient-thread"
-                            d={pathBetween(x1, y, x2, y + ((i % 3) - 1) * 7, bend)}
+                            d={pathBetween(x1, y, x2, y + ((i % 3) - 1) * 6, bend)}
                             fill="none"
                             stroke="#C8922D"
-                            strokeOpacity="0.18"
-                            strokeWidth="0.18"
+                            strokeOpacity="0.15"
+                            strokeWidth="0.16"
                             strokeDasharray="1 5"
                             strokeLinecap="round"
                         />
                     );
                 })}
 
-                {/* source to hub streams */}
-                {sources.map((s) => {
-                    const hub = hubs.find((h) => h.id === s.to)!;
+                {/* ghost (inactive) cluster paths -- e.g. قرارداد: barely visible */}
+                {ghostNodes.map((n) => (
+                    <path
+                        key={`ghost-${n.id}`}
+                        className="ghost-path"
+                        d={pathToCenter(n.id, n.x, n.y)}
+                        fill="none"
+                        stroke="#C8922D"
+                        strokeWidth="0.28"
+                        strokeDasharray="0.3 2.4"
+                        strokeLinecap="round"
+                    />
+                ))}
+
+                {/* secondary paths: faint dashed lines to the surrounding entities */}
+                {secondaryNodes.map((n) => (
+                    <path
+                        key={`secondary-${n.id}`}
+                        className="path-secondary"
+                        d={pathToCenter(n.id, n.x, n.y)}
+                        fill="none"
+                        stroke="url(#riverAmber)"
+                        strokeWidth="0.32"
+                        strokeLinecap="round"
+                    />
+                ))}
+
+                {/* active main current: order list + customs, the two live flows */}
+                {activeNodes.map((n) => (
+                    <path
+                        key={`active-${n.id}`}
+                        className="path-active"
+                        d={pathToCenter(n.id, n.x, n.y)}
+                        fill="none"
+                        stroke="url(#riverAmber)"
+                        strokeWidth="0.7"
+                        strokeLinecap="round"
+                        filter="url(#softGlow)"
+                    />
+                ))}
+
+                {/* customs sub-branches fanning out (تعرفه / ارزش / مجوز) */}
+                {customsNode?.subs?.map((sub, index) => {
+                    const angle = -0.55 + index * 0.55;
+                    const bx = customsNode.x + 7 * Math.cos(angle);
+                    const by = customsNode.y + 7 * Math.sin(angle);
                     return (
-                        <g key={s.id}>
+                        <g key={sub}>
                             <path
-                                className="river-feeder"
-                                d={pathToHub(s.id, s.x, s.y, hub.x, hub.y)}
+                                className="path-secondary"
+                                d={pathBetween(customsNode.x, customsNode.y, bx, by)}
                                 fill="none"
                                 stroke="url(#riverAmber)"
-                                strokeWidth="0.45"
+                                strokeWidth="0.24"
                                 strokeLinecap="round"
-                                filter="url(#softGlow)"
-                            />
-                            <path
-                                d={pathToHub(`${s.id}-white`, s.x, s.y, hub.x, hub.y)}
-                                fill="none"
-                                stroke="url(#riverWhite)"
-                                strokeWidth="0.16"
-                                strokeLinecap="round"
-                                opacity="0.35"
-                            />
-                            <circle
-                                className="source-spark"
-                                cx={s.x}
-                                cy={s.y}
-                                r="0.35"
-                                fill="#F7F3EA"
-                                opacity="0.15"
-                                filter="url(#softGlow)"
                             />
                             <text
-                                className="source-label"
-                                x={s.x}
-                                y={s.y - 1.6}
-                                textAnchor="middle"
-                                fill="#F7F3EA"
-                                opacity="0"
-                                fontSize="1.65"
-                                fontWeight="500"
-                            >
-                                {s.label}
-                            </text>
-                        </g>
-                    );
-                })}
-
-                {/* hub to final river */}
-                {hubs.map((h, i) => {
-                    const bend = i % 2 ? 8 : -8;
-                    const width = h.level === 2 ? 0.82 : 0.58;
-
-                    return (
-                        <path
-                            key={`main-${h.id}`}
-                            className="river-main"
-                            d={pathBetween(h.x, h.y, targetLogo.x, targetLogo.y, bend)}
-                            fill="none"
-                            stroke="url(#riverAmber)"
-                            strokeWidth={width}
-                            strokeLinecap="round"
-                            filter="url(#softGlow)"
-                        />
-                    );
-                })}
-
-                {/* main calm current near Kardan */}
-                <path
-                    className="main-current-core"
-                    d="M 58 51 C 66 48, 73 49, 82 50"
-                    fill="none"
-                    stroke="#F7F3EA"
-                    strokeWidth="0.75"
-                    strokeLinecap="round"
-                    opacity="0"
-                    filter="url(#softGlow)"
-                />
-
-                {/* hubs */}
-                {hubs.map((h) => (
-                    <g key={h.id} className="river-hub">
-                        <circle
-                            cx={h.x}
-                            cy={h.y}
-                            r={h.level === 2 ? 3.4 : 2.4}
-                            fill="#C8922D"
-                            opacity="0.08"
-                            filter="url(#softGlow)"
-                        />
-                        <text
-                            x={h.x}
-                            y={h.y - 2.8}
-                            textAnchor="middle"
-                            fill="#F7F3EA"
-                            fontSize={h.level === 2 ? "2.45" : "2.05"}
-                            fontWeight="700"
-                        >
-                            {h.label}
-                        </text>
-                        {h.subs.map((sub, index) => (
-                            <text
-                                key={sub}
                                 className="hub-sub"
-                                x={h.x}
-                                y={h.y + 2.2 + index * 2.3}
+                                x={bx}
+                                y={by}
                                 textAnchor="middle"
                                 fill="#E8BC62"
                                 fontSize="1.5"
@@ -373,23 +287,94 @@ export default function DecisionRiver({ logoSrc }: Props) {
                             >
                                 {sub}
                             </text>
-                        ))}
+                        </g>
+                    );
+                })}
+
+                {/* ghost node markers (very faint, no glow) */}
+                {ghostNodes.map((n) => (
+                    <g key={n.id} className="river-node">
+                        <circle cx={n.x} cy={n.y} r="1.8" fill="#C8922D" opacity="0.05" />
+                        <text
+                            x={n.x}
+                            y={n.y - 2.4}
+                            textAnchor="middle"
+                            fill="#F7F3EA"
+                            fontSize="1.75"
+                            fontWeight="500"
+                            opacity="0.25"
+                        >
+                            {n.label}
+                        </text>
                     </g>
                 ))}
 
-                {/* Kardan shore */}
+                {/* secondary node markers */}
+                {secondaryNodes.map((n) => (
+                    <g key={n.id} className="river-node">
+                        <circle
+                            cx={n.x}
+                            cy={n.y}
+                            r="2.2"
+                            fill="#C8922D"
+                            opacity="0.08"
+                            filter="url(#softGlow)"
+                        />
+                        <text
+                            x={n.x}
+                            y={n.y - 2.8}
+                            textAnchor="middle"
+                            fill="#F7F3EA"
+                            fontSize="2"
+                            fontWeight="600"
+                        >
+                            {n.label}
+                        </text>
+                    </g>
+                ))}
+
+                {/* active node markers: larger, brighter halo */}
+                {activeNodes.map((n) => (
+                    <g key={n.id} className="river-node">
+                        <circle
+                            cx={n.x}
+                            cy={n.y}
+                            r="3.4"
+                            fill="#C8922D"
+                            opacity="0.12"
+                            filter="url(#softGlow)"
+                        />
+                        <text
+                            x={n.x}
+                            y={n.y - 3.4}
+                            textAnchor="middle"
+                            fill="#F7F3EA"
+                            fontSize="2.5"
+                            fontWeight="700"
+                        >
+                            {n.label}
+                        </text>
+                    </g>
+                ))}
+
+                {/* Kardan center */}
                 <g className="kardan-shore">
                     <ellipse
                         className="shore-glow"
-                        cx={targetLogo.x}
-                        cy={targetLogo.y}
-                        rx="8"
-                        ry="13"
+                        cx={kardanCenter.x}
+                        cy={kardanCenter.y}
+                        rx="9"
+                        ry="14"
                         fill="#C8922D"
                         opacity="0.24"
                         filter="url(#softGlow)"
                     />
-                    <foreignObject x="76.4" y="41.5" width="11.2" height="17">
+                    <foreignObject
+                        x={kardanCenter.x - 5.6}
+                        y={kardanCenter.y - 8.5}
+                        width="11.2"
+                        height="17"
+                    >
                         <div className="flex h-full w-full items-center justify-center">
                             {/* eslint-disable-next-line @next/next/no-img-element --
                                 next/image can't size correctly inside an SVG foreignObject
@@ -402,12 +387,22 @@ export default function DecisionRiver({ logoSrc }: Props) {
                             />
                         </div>
                     </foreignObject>
+                    <text
+                        x={kardanCenter.x}
+                        y={kardanCenter.y + 11.5}
+                        textAnchor="middle"
+                        fill="#F7F3EA"
+                        fontSize="2.6"
+                        fontWeight="700"
+                    >
+                        کاردان
+                    </text>
                 </g>
 
-                {/* particles */}
-                {Array.from({ length: 54 }).map((_, i) => {
-                    const x = 6 + ((i * 19) % 78);
-                    const y = 8 + ((i * 31) % 84);
+                {/* particles spanning the whole canvas */}
+                {Array.from({ length: 48 }).map((_, i) => {
+                    const x = 4 + ((i * 19) % 92);
+                    const y = 6 + ((i * 31) % 88);
                     return (
                         <circle
                             key={`particle-${i}`}
@@ -422,7 +417,7 @@ export default function DecisionRiver({ logoSrc }: Props) {
                 })}
             </svg>
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_48%_50%,transparent_0%,rgba(7,9,11,0.15)_52%,rgba(7,9,11,0.78)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_27%_50%,transparent_0%,rgba(7,9,11,0.1)_46%,rgba(7,9,11,0.7)_100%)]" />
         </div>
     );
 }

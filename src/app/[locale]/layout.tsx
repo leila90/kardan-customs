@@ -4,7 +4,6 @@ import {Locale, NextIntlClientProvider} from 'next-intl';
 import {inter, yekan} from "@/lib/font";
 import Navbar from "@/components/layout/navbar/navbar";
 import {getTranslations} from "next-intl/server";
-import NavbarLinks from "@/components/layout/navbar/navbar-links";
 import Footer from "@/components/sections/footer/footer";
 import {absoluteUrl, buildLanguageAlternates, siteConfig, type SiteLocale} from "@/lib/site-config";
 import OrganizationJsonLd from "@/components/seo/organization-json-ld";
@@ -95,7 +94,7 @@ export default async function LocaleLayout({
           <div className="bg-[var(--color-background)]">
               {children}
           </div>
-          <Footer />
+          <Footer locale={locale} />
       </div>
       </NextIntlClientProvider>
 

@@ -34,5 +34,54 @@
     "description": "We help businesses navigate customs procedures efficiently and confidently.",
     "primaryButton": "Work With Us",
     "secondaryButton": "Our Projects"
+  },
+  "WhyUs": {
+    "brand": "Kardan Customs",
+    "title": "Why Kardan Customs?",
+    "subTitle": "Move faster, stay consistent, and focus on building a better outcome.",
+    "items": [
+      {"title": "Achievement", "desc": "More than two thousand successful trade projects"},
+      {"title": "Experience", "desc": "Over three decades of combined founder experience"},
+      {"title": "Credibility", "desc": "Operating on the basis of official licenses"},
+      {"title": "Learning", "desc": "Every project, a new lesson learned"}
+    ]
+  },
+  "Contact": {
+    "brand": "Kardan Customs",
+    "title": "Contact Us",
+    "subTitle": "Our team is ready to answer your questions about customs clearance and trade compliance.",
+    "name": "Full Name",
+    "namePlaceholder": "e.g. John Smith",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "agreement": "By submitting, you agree to our Terms and Privacy Policy.",
+    "terms": "Terms",
+    "privacy": "Privacy Policy",
+    "submit": "Send Message",
+    "aboutText": "Kardan Customs — your reliable partner for international trade and customs clearance."
+  },
+  "Features": {
+    "brand": "Kardan Customs",
+    "title": "Our Services",
+    "subTitle": "A complete set of customs and trade services to help your business grow.",
+    "items": [
+      {"title": "Fast Clearance", "desc": "Tracking and clearing goods through customs with minimal wait time."},
+      {"title": "Order Registration", "desc": "Full order registration handled through the national trade portal."},
+      {"title": "Expert Consulting", "desc": "Precise guidance on tariffs, regulations and required documentation."},
+      {"title": "Ongoing Support", "desc": "Our team stays with you from order to final delivery."}
+    ]
+  },
+  "Footer": {
+    "about": "Kardan Customs provides professional customs clearance, order registration and customs consulting for international trade.",
+    "linksHeading": "Important Links",
+    "socialHeading": "Social Links",
+    "newsletterHeading": "Subscribe for news",
+    "newsletterPlaceholder": "Enter your email..",
+    "subscribe": "Subscribe",
+    "copyright": "© {year} Kardan Customs",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy"
   }
 }

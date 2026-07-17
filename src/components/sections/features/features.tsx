@@ -1,88 +1,35 @@
-
+import { getTranslations } from "next-intl/server";
 import Title from "@/components/ui/title";
-import Image from "next/image";
+import FeatureCard from "@/components/sections/features/feature-card";
 
-const features = [
-    {
-        title: "Build Faster",
-        desc: "Skip repetitive UI work and spend more time building the features your users need.",
-        icon: "/images/icons/featuresIcons/technology-integrated-circuits.svg",
-    },
-    {
-        title: "Production Ready",
-        desc: "Professionally crafted components built for real-world projects and scalable applications.",
-        icon: "/images/icons/featuresIcons/command-window-line.svg",
-    },
-    {
-        title: "Clean & Consistent",
-        desc: "Keep your design system unified and deliver a more polished user experience.",
-        icon: "/images/icons/featuresIcons/developer.svg",
-    },
-    {
-        title: "Sales",
-        desc: "Experience the difference of our personalized sales approach, where you are always our top priority.",
-        icon: "/images/icons/featuresIcons/responsive.svg",
-    },
-    // {
-    //     title: "Onboarding",
-    //     desc: "Our onboarding process is designed to be simple and intuitive, so you can start using our platform right away",
-    //     icon: "/images/icons/featuresIcons/repository.svg",
-    // },
-    // {
-    //     title: "Support",
-    //     desc: "Our commitment to exceptional support ensures that you receive the assistance you need, whenever you need it",
-    //     icon: "/images/icons/featuresIcons/interface-settings.svg",
-    // },
-]
+const featureIcons = [
+    "/images/icons/featuresIcons/rest-api.svg",
+    "/images/icons/featuresIcons/repository.svg",
+    "/images/icons/featuresIcons/interface-settings.svg",
+    "/images/icons/featuresIcons/multimedia-code-alt.svg",
+];
 
-export default function Features() {
+export default async function Features() {
+    const t = await getTranslations("Features");
+    const items = t.raw("items") as { title: string; desc: string }[];
+
     return (
-        <section id={"aboutUs"} className="md:my-10 md:mx-30 my-5 mx-5 bg-transparent">
-            <Title brand='MinKits Team' title='Why Kardan Customs?' subTitle='Build faster, stay consistent, and focus on creating better products.'/>
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="services" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
+            <Title brand={t("brand")} title={t("title")} subTitle={t("subTitle")} />
 
-                {/*/!* Header *!/*/}
-                {/*<div className="text-center max-w-3xl mx-auto mb-20">*/}
-                {/*    <h2 className="text-4xl font-bold text-zinc-900 mb-4">*/}
-                {/*        Every feature designed for the user*/}
-                {/*    </h2>*/}
-                {/*    <p className="text-zinc-500 text-lg">*/}
-                {/*        At every step of our process, we prioritize the user, ensuring that our*/}
-                {/*        products and services are designed with their needs in mind.*/}
-                {/*    </p>*/}
-                {/*</div>*/}
-
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                    {features.map((item, i) => {
-                        return (
-                            <div
-                                key={i}
-                                className={` hover:animate-pulse cursor-pointer
-                  px-10 py-14 text-center
-                  border-white
-                  ${i % 3 !== 0 ? "md:border-l" : ""}
-                  ${i >= 3 ? "border-t" : ""}
-                `}
-                            >
-                                <div className="flex justify-center">
-                                    <Image src={item.icon} width={200} height={200} alt={"features"} className="w-20 h-20"/>
-                                </div>
-
-                                <h3 className="text-lg font-semibold text-zinc-900">
-                                    {item.title}
-                                </h3>
-                                <div
-                                    className='w-full h-px my-5 bg-linear-to-r from-white/25 via-zinc-500 to-white/25'></div>
-                                <p className="text-zinc-500 text-sm leading-relaxed">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        )
-                    })}
+            <div className="mx-auto max-w-7xl px-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {items.map((item, i) => (
+                        <FeatureCard
+                            key={item.title}
+                            title={item.title}
+                            desc={item.desc}
+                            icon={featureIcons[i] ?? featureIcons[0]}
+                            className="rounded-[var(--radius-lg)] border border-[var(--color-border)]"
+                        />
+                    ))}
                 </div>
-
             </div>
         </section>
-    )
+    );
 }

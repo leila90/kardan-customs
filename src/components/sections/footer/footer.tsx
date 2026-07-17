@@ -29,7 +29,7 @@ export default async function Footer({ locale }: { locale: Locale }) {
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
                         <div className="flex w-full flex-col items-center text-center md:w-[45%] md:items-start md:text-left lg:w-[35%]">
-                            <Image src="/images/logo/logo-f-w.png" alt={siteConfig.name} width={200} height={100} />
+                            <Image src="/images/logo/logo-f-w.png" alt={siteConfig.name} width={200} height={34} />
                             <div className="my-4 h-px w-full bg-linear-to-r from-[var(--color-border)] to-[var(--color-primary)]" />
                             <p className="max-w-sm text-sm leading-relaxed text-white/60">
                                 {t("about")}

@@ -5,9 +5,9 @@ export default function NavbarLogo() {
         <div>
             <Image
                 src="/images/logo/logo-f-w.png"
-                alt={"logo"}
+                alt="Kardan Customs"
                 width={150}
-                height={100}
+                height={26}
             ></Image>
         </div>
     );

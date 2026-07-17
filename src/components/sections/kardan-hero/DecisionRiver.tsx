@@ -156,7 +156,7 @@ export default function DecisionRiver({ logoSrc }: Props) {
             );
 
             tl.to(
-                "logo",
+                ".kardan-shore",
                 {
                     opacity: 1,
                     scale: 1,

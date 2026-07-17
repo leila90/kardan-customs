@@ -33,7 +33,7 @@ export default function Title(props: SectionTitleProps
                         </div>
 
                         <p className="m-0 lg:text-[9px] text-[7px] font-bold absolute bottom-1">
-                            <Image src={"/images/logo/logo-f-b.png"} alt={brand} width={70} height={100} />
+                            <Image src={"/images/logo/logo-f-b.png"} alt={brand} width={70} height={12} />
                         </p>
                     </div>
                 </div>

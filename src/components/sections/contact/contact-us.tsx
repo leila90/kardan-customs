@@ -31,7 +31,7 @@ export default async function ContactUs() {
 
                 <div className="relative flex basis-1/2 flex-col">
                     <div className="flex basis-2/5 items-center justify-center px-10">
-                        <Image src="/images/logo/logo-f-b.png" alt="" width={280} height={280} />
+                        <Image src="/images/logo/logo-f-b.png" alt="" width={280} height={48} />
                     </div>
                     <div className="flex basis-1/4 flex-col items-center justify-center px-10">
                         <div className="h-px w-full bg-linear-to-r from-[var(--color-border)]/0 via-[var(--color-border)] to-[var(--color-border)]/0" />

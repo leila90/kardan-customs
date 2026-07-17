@@ -9,6 +9,7 @@ export default function RootLayout({
     return (
         <html
             suppressHydrationWarning
+            data-scroll-behavior="smooth"
             className={`${inter.variable} ${yekan.variable}`}>
         <body>
         <ThemeProvider>

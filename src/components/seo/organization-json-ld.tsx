@@ -1,4 +1,5 @@
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { safeJsonLd } from "@/lib/safe-json-ld";
 
 /**
  * Renders the Organization structured data (schema.org/Organization) once,
@@ -20,7 +21,7 @@ export default function OrganizationJsonLd() {
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}
+            dangerouslySetInnerHTML={{__html: safeJsonLd(data)}}
         />
     );
 }

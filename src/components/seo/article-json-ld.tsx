@@ -1,6 +1,7 @@
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import type { BlogPost } from "@/lib/blog/posts";
 import type { SiteLocale } from "@/lib/site-config";
+import { safeJsonLd } from "@/lib/safe-json-ld";
 
 export default function ArticleJsonLd({post, locale}: {post: BlogPost; locale: SiteLocale}) {
     const data = {
@@ -23,7 +24,7 @@ export default function ArticleJsonLd({post, locale}: {post: BlogPost; locale: S
     return (
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}
+            dangerouslySetInnerHTML={{__html: safeJsonLd(data)}}
         />
     );
 }

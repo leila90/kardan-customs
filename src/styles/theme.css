@@ -2,11 +2,11 @@
     /* Primitive */
     --graphite: #2b2b2b;
     --carbon-black: #1f1f1f;
-    --charcoal: #4b4b4b;
-    --gray: #7a7a7a;
+    --charcoal: #d6d6d6;
+    --gray: #b3b3b3;
 
     --secondary-bg: #efece6;
-    --amber: #c6922b;
+    --amber: #ae801b;
     --deep-olive: #56624a;
     --bright-snow: #f8f7f4;
     --dust-gray: #ddd9d0;
@@ -15,10 +15,13 @@
     --color-primary: var(--graphite);
     --color-secondary: var(--bright-snow);
 
-    --color-background: var(--bright-snow);
+    --color-background: var(--carbon-black) !important;
     --color-background-secondary: var(--secondary-bg);
 
-    --color-text-primary: var(--carbon-black);
+    /*--color-text-primary: var(--carbon-black);*/
+    /*--color-text-secondary: var(--charcoal);*/
+    /*--color-text-muted: var(--gray);*/
+    --color-text-primary: var(--bright-snow);
     --color-text-secondary: var(--charcoal);
     --color-text-muted: var(--gray);
 

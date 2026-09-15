@@ -8,7 +8,7 @@ import NavbarShell from "@/components/layout/navbar/navbar-shell";
 
 interface Props {
     labels: Record<string, string>;
-    cta: string;
+    cta: Record<string, string>;
 }
 
 export default function Navbar({

@@ -70,14 +70,19 @@ export default async function LocaleLayout({
           : inter.className;
 
     const t = await getTranslations("Navbar");
+    const tCta = await getTranslations("Cta");
 
     const labels = {
         home: t("home"),
+        solutions: t("solutions"),
         about: t("about"),
-        services: t("services"),
-        projects: t("projects"),
-        blog: t("blog"),
-        contact: t("contact"),
+        horizon: t("horizon"),
+        routeReview: t("routeReview"),
+        knowledge: t("knowledge"),
+        contact: t("contact")
+    };
+    const cta = {
+        cta: tCta("cta")
     };
 
   return (
@@ -89,7 +94,7 @@ export default async function LocaleLayout({
       >
           <Navbar
               labels={labels}
-              cta={t("cta")}
+              cta={cta}
           />
           <div className="bg-[var(--color-background)]">
               {children}

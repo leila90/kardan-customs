@@ -1,15 +1,18 @@
 import Image from "next/image";
+import { useLocale } from 'next-intl';
 
 type SectionTitleProps = {
     brand: string,
     title: string,
     subTitle: string,
+    description: string,
     marginTop?: string
 }
 
 export default function Title(props: SectionTitleProps
 ) {
-    const {brand, title, subTitle, marginTop} = props
+    const locale = useLocale();
+    const {brand, title, subTitle, description, marginTop} = props
     return (
 
             <div
@@ -21,19 +24,20 @@ export default function Title(props: SectionTitleProps
 
                     <h3
                         className="
-                            heading-3
+                            text-xl
                             font-bold
+                            text-[var(--color-accent)]
                         "
                     >
                         {title}
                     </h3>
-                    <div className="relative flex flex-col items-end w-[70px] lg:w-[240px] h-full">
+                    <div className="relative flex flex-col items-end w-full lg:w-[340px] h-full">
                         <div
-                            className="w-full h-px bg-linear-to-r from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0">
+                            className={`w-full h-px ${locale === "fa" ? "bg-linear-to-l" : "bg-linear-to-r"} from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0`}>
                         </div>
 
                         <p className="m-0 lg:text-[9px] text-[7px] font-bold absolute bottom-1">
-                            <Image src={"/images/logo/logo-f-b.png"} alt={brand} width={70} height={12} />
+                            <Image src={"/images/logo/logo-f-w.png"} alt={brand} width={70} height={12} />
                         </p>
                     </div>
                 </div>
@@ -49,8 +53,13 @@ export default function Title(props: SectionTitleProps
                             </circle>
                         </svg>
                     </div>
-                    <h3 className="heading-4 text-[var(--color-text-muted)]">
+                    <h3 className="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">
                     {subTitle}
+                </h3>
+                </div>
+                <div className="font-light text-base flex items-center gap-2 overflow-visible mt-5">
+                    <h3 className="heading-4 text-[var(--color-text-primary)]">
+                    {description}
                 </h3>
                 </div>
             </div>

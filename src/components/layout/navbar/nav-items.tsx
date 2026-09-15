@@ -4,20 +4,24 @@ export const navItems = [
         slug: "",
     },
     {
+        key: "solutions",
+        slug: "solutions",
+    },
+    {
         key: "about",
         slug: "about",
     },
     {
-        key: "services",
-        slug: "services",
+        key: "horizon",
+        slug: "horizon",
     },
     {
-        key: "projects",
-        slug: "projects",
+        key: "routeReview",
+        slug: "routeReview",
     },
     {
-        key: "blog",
-        slug: "blog",
+        key: "knowledge",
+        slug: "knowledge",
     },
     {
         key: "contact",

@@ -13,7 +13,7 @@ import clsx from "clsx";
 
 interface MobileMenuProps {
     labels: Record<string, string>;
-    cta: string;
+    cta: Record<string, string>;
 }
 
 export default function MobileMenu({
@@ -87,7 +87,7 @@ export default function MobileMenu({
 
                         <div className="mt-8">
                             <Button className="w-full">
-                                {cta}
+                                {cta['cta']}
                             </Button>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { kardanCenter, riverNodes } from "./riverData";
+import { kardanCenter, riverNodes } from "./river-data";
 
 type Props = {
     logoSrc: string;

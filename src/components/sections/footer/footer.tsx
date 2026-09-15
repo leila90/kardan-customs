@@ -25,7 +25,7 @@ export default async function Footer({ locale }: { locale: Locale }) {
     return (
         <section id="footer">
             <FooterHeader />
-            <footer className="bg-[var(--color-primary)] px-4 pt-50 pb-12 sm:px-6 lg:px-8">
+            <footer className="bg-black px-4 pt-50 pb-12 sm:px-6 lg:px-8">
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
                         <div className="flex w-full flex-col items-center text-center md:w-[45%] md:items-start md:text-left lg:w-[35%]">

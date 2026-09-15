@@ -11,12 +11,15 @@
   },
   "Navbar": {
     "home": "Home",
-    "about": "Solutions",
-    "services": "About Kardan",
-    "projects": "Trade Horizon",
-    "blog": "Knowledge Base",
-    "contact": "Contact Us",
-    "cta": "Work With Us"
+    "solutions": "Solutions",
+    "about": "About Kardan",
+    "horizon": "Trade Horizon",
+    "routeReview": "Route Review",
+    "knowledge": "Knowledge Base",
+    "contact": "Contact"
+  },
+  "Cta": {
+    "cta": "Chart My Route"
   },
   "Blog": {
     "metaTitle": "Knowledge Base",
@@ -39,6 +42,7 @@
     "brand": "Kardan Customs",
     "title": "Why Kardan Customs?",
     "subTitle": "Move faster, stay consistent, and focus on building a better outcome.",
+    "description": "",
     "items": [
       {"title": "Achievement", "desc": "More than two thousand successful trade projects"},
       {"title": "Experience", "desc": "Over three decades of combined founder experience"},
@@ -66,6 +70,7 @@
     "brand": "Kardan Customs",
     "title": "Our Services",
     "subTitle": "A complete set of customs and trade services to help your business grow.",
+    "description": "",
     "items": [
       {"title": "Fast Clearance", "desc": "Tracking and clearing goods through customs with minimal wait time."},
       {"title": "Order Registration", "desc": "Full order registration handled through the national trade portal."},

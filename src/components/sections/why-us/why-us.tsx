@@ -21,16 +21,16 @@ export default async function WhyUs() {
 
     return (
         <section id="aboutUs" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
-            <Title brand={t("brand")} title={t("title")} subTitle={t("subTitle")} />
+            <Title brand={t("brand")} title={t("title")} subTitle={t("subTitle")} description={t("description")} />
 
-            <div className="mx-auto max-w-7xl px-6">
-                <div className="grid grid-cols-1 items-center gap-6 lg:grid-cols-3">
-                    <div className="relative aspect-[4/3] w-full lg:aspect-square">
+            <div className="mx-auto  px-6">
+                <div className="grid grid-cols-1 items-center justify-items-center gap-6 lg:grid-cols-3">
+                    <div className=" aspect-[4/3] w-full ite justify-items-center items-center">
                         <Image
-                            src="/images/why-us/image.png"
+                            src="/images/why-us/kardan.png"
                             alt={t("title")}
-                            fill
-                            sizes="(min-width: 1024px) 33vw, 100vw"
+                            width={500}
+                            height={500}
                             className="object-cover"
                         />
                     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import DecisionRiver from "./DecisionRiver";
+import DecisionRiver from "./decision-river";
 
 export default function KardanHero() {
     const t = useTranslations("Hero");

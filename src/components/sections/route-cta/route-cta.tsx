@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, MoveUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
@@ -31,10 +31,7 @@ export default async function RouteCta() {
                     className="group mt-8 inline-flex items-center gap-3 rounded-xl border border-[var(--color-accent)]/50 bg-[var(--color-accent)] px-6 py-3.5 text-sm font-semibold text-[#111] shadow-[0_10px_40px_rgba(174,128,27,0.16)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--hero-accent-hover)] hover:shadow-[0_14px_50px_rgba(174,128,27,0.25)]"
                 >
                     {t("button")}
-                    <span className="transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
-                        <MoveUpRight size={17} className="ltr:hidden" />
-                        <MoveUpRight size={17} className="rtl:hidden" />
-                    </span>
+                    <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
                 </Link>
             </div>
         </section>

@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kardan Customs
 
-## Getting Started
+Kardan Customs is a bilingual Persian/English website built with Next.js 16, React 19, TypeScript, Tailwind CSS 4, and next-intl.
 
-First, run the development server:
+> This project follows the repository guidance in `AGENTS.md`. Next.js APIs and conventions should be checked against the installed version before making framework-level changes.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run ESLint:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+Create a production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Start the production server after a successful build:
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- next-intl for `fa` / `en` localization
+- next-themes for theme support
+- Framer Motion and GSAP for animation
+- Lucide React for icons
+
+## Project structure
+
+```text
+src/
+├── app/                 # Next.js App Router and localized routes
+├── components/          # Shared UI and page sections
+├── i18n/                # Routing and request configuration
+├── lib/                 # Site configuration, fonts, blog data, utilities
+└── styles/              # Theme and typography styles
+
+messages/                # Persian and English translations
+public/                  # Static assets
+```
+
+## Internationalization
+
+The application currently supports:
+
+- `fa` — Persian (default)
+- `en` — English
+
+Localized pages live under `src/app/[locale]` and translations are stored in `messages/`.
+
+## Environment variables
+
+Local environment files are intentionally ignored by Git. If the project requires environment variables, create a local `.env.local` file and keep secrets out of the repository.
+
+## Repository guidance
+
+Before changing framework-specific code, read `AGENTS.md` and verify the relevant APIs against the installed Next.js version. Keep changes focused, run the available quality checks, and avoid committing local IDE metadata or secrets.

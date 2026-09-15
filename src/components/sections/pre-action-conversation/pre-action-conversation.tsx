@@ -8,7 +8,11 @@ import { getTranslations } from "next-intl/server";
 
 const cardIcons = [Network, ShieldCheck, GitBranch, Lightbulb];
 
-function DecisionMap() {
+type DecisionMapProps = {
+    label: string;
+};
+
+function DecisionMap({ label }: DecisionMapProps) {
     return (
         <div
             aria-hidden="true"
@@ -84,7 +88,7 @@ function DecisionMap() {
             </svg>
 
             <span className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[45px] whitespace-nowrap rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-background)]/80 px-3 py-1 text-[10px] font-medium text-[var(--color-accent)] backdrop-blur">
-                تصمیم روشن‌تر
+                {label}
             </span>
         </div>
     );
@@ -130,7 +134,7 @@ export default async function PreActionConversation() {
                     </div>
 
                     <div className="order-2 lg:order-1">
-                        <DecisionMap />
+                        <DecisionMap label={t("decisionLabel")} />
                     </div>
                 </div>
 

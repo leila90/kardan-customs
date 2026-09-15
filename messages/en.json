@@ -78,6 +78,20 @@
       {"title": "Ongoing Support", "desc": "Our team stays with you from order to final delivery."}
     ]
   },
+  "PreActionConversation": {
+    "eyebrow": "Conversation Before Action",
+    "title": "We usually don't start with an answer.",
+    "highlight": "We start with a question.",
+    "subtitle": "Every project has its own conditions. Before suggesting a solution, we first understand your goods, constraints, risks and real priorities.",
+    "description": "The goal is simple: compare the possible paths and help you make a clearer decision before execution begins.",
+    "decisionLabel": "A clearer decision",
+    "items": [
+      {"title": "Understand the project", "desc": "A precise view of the goods, route, constraints and actual goals."},
+      {"title": "Identify the risks", "desc": "Find points that may create delays, imbalance or hidden costs."},
+      {"title": "Review possible paths", "desc": "Compare practical options before choosing the right route."},
+      {"title": "Make a better-informed decision", "desc": "Choose a path aligned with the importance and priorities of your project."}
+    ]
+  },
   "Footer": {
     "about": "Kardan Customs provides professional customs clearance, order registration and customs consulting for international trade.",
     "linksHeading": "Important Links",

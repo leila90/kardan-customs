@@ -5,7 +5,6 @@ import Features from "@/components/sections/features/features";
 import WhyUs from "@/components/sections/why-us/why-us";
 import KardanHero from "@/components/sections/kardan-hero/kardan-hero";
 import Hero from "@/components/sections/hero/hero";
-import Card from "@/components/ui/cards/card";
 
 export default function Home() {
     return (

@@ -40,15 +40,56 @@
   },
   "WhyUs": {
     "brand": "Kardan Customs",
-    "title": "Why Kardan Customs?",
-    "subTitle": "Move faster, stay consistent, and focus on building a better outcome.",
-    "description": "",
+    "title": "Solutions",
+    "subTitle": "Every project has its own path",
+    "description": "Four core ways to work with Kardan, based on the point where your project stands today.",
     "items": [
-      {"title": "Achievement", "desc": "More than two thousand successful trade projects"},
-      {"title": "Experience", "desc": "Over three decades of combined founder experience"},
-      {"title": "Credibility", "desc": "Operating on the basis of official licenses"},
-      {"title": "Learning", "desc": "Every project, a new lesson learned"}
+      {"title": "Import", "desc": "Importing is more than buying goods; we consider suppliers, permits, transport and clearance together."},
+      {"title": "Export", "desc": "Every market has different requirements; we shape your export route around the destination."},
+      {"title": "Clearance", "desc": "Clearance is one part of the journey, not the whole journey; we handle it with structure and transparency."},
+      {"title": "Route Review", "desc": "Sometimes the most important decision comes before the project starts. Let's begin there."}
     ]
+  },
+  "PreActionConversation": {
+    "eyebrow": "Conversation Before Action",
+    "title": "We usually don't start with an answer.",
+    "highlight": "We start with a question.",
+    "subtitle": "Every project has its own conditions. Before suggesting a solution, we first understand your goods, constraints, risks and real priorities.",
+    "description": "The goal is simple: compare the possible paths and help you make a clearer decision before execution begins.",
+    "decisionLabel": "A clearer decision",
+    "items": [
+      {"title": "Understand the project", "desc": "A precise view of the goods, route, constraints and actual goals."},
+      {"title": "Identify the risks", "desc": "Find points that may create delays, imbalance or hidden costs."},
+      {"title": "Review possible paths", "desc": "Compare practical options before choosing the right route."},
+      {"title": "Make a better-informed decision", "desc": "Choose a path aligned with the importance and priorities of your project."}
+    ]
+  },
+  "ExperienceDomains": {
+    "eyebrow": "Experience Domains",
+    "title": "Think one step ahead at every stage.",
+    "description": "From goods and documents to transport and execution requirements, every part is reviewed as part of the whole chain.",
+    "items": [
+      {"title": "Goods & sourcing", "desc": "Review goods specifications, origin, supplier and requirements before movement begins."},
+      {"title": "Documents & registration", "desc": "Align information and documents to reduce back-and-forth and execution errors."},
+      {"title": "Route planning", "desc": "Compare possible routes and select the option that fits the project conditions."},
+      {"title": "Risk & compliance", "desc": "Identify sensitive points and review requirements before they create cost or delay."},
+      {"title": "International transport", "desc": "Consider transport, timing and constraints alongside the customs decision."},
+      {"title": "Clearance & delivery", "desc": "Follow execution through the final handover with an integrated view of the journey."}
+    ]
+  },
+  "KnowledgePreview": {
+    "eyebrow": "Knowledge Base",
+    "title": "What you should know before deciding.",
+    "description": "Practical guides and analysis to help you navigate trade and customs clearance with clearer information.",
+    "viewAll": "View all articles",
+    "readMore": "Read more",
+    "minuteRead": "{minutes} min read"
+  },
+  "RouteCta": {
+    "eyebrow": "Next step",
+    "title": "Shall we review the right route for your project?",
+    "description": "We start the conversation where the decision matters — before execution turns uncertainty into cost.",
+    "button": "Review my project route"
   },
   "Contact": {
     "brand": "Kardan Customs",
@@ -76,20 +117,6 @@
       {"title": "Order Registration", "desc": "Full order registration handled through the national trade portal."},
       {"title": "Expert Consulting", "desc": "Precise guidance on tariffs, regulations and required documentation."},
       {"title": "Ongoing Support", "desc": "Our team stays with you from order to final delivery."}
-    ]
-  },
-  "PreActionConversation": {
-    "eyebrow": "Conversation Before Action",
-    "title": "We usually don't start with an answer.",
-    "highlight": "We start with a question.",
-    "subtitle": "Every project has its own conditions. Before suggesting a solution, we first understand your goods, constraints, risks and real priorities.",
-    "description": "The goal is simple: compare the possible paths and help you make a clearer decision before execution begins.",
-    "decisionLabel": "A clearer decision",
-    "items": [
-      {"title": "Understand the project", "desc": "A precise view of the goods, route, constraints and actual goals."},
-      {"title": "Identify the risks", "desc": "Find points that may create delays, imbalance or hidden costs."},
-      {"title": "Review possible paths", "desc": "Compare practical options before choosing the right route."},
-      {"title": "Make a better-informed decision", "desc": "Choose a path aligned with the importance and priorities of your project."}
     ]
   },
   "Footer": {

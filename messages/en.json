@@ -38,7 +38,7 @@
     "primaryButton": "Start Your Case Review",
     "secondaryButton": "How Kardan Works"
   },
-  "WhyUs": {
+  "Solutions": {
     "brand": "Kardan Customs",
     "title": "Solutions",
     "subTitle": "Every project has its own path",
@@ -51,11 +51,11 @@
     ]
   },
   "PreActionConversation": {
-    "eyebrow": "Conversation Before Action",
-    "title": "We usually don't start with an answer.",
-    "highlight": "We start with a question.",
-    "subtitle": "Every project has its own conditions. Before suggesting a solution, we first understand your goods, constraints, risks and real priorities.",
-    "description": "The goal is simple: compare the possible paths and help you make a clearer decision before execution begins.",
+    "brand": "Kardan Customs",
+    "title": "Conversation Before Action",
+    "subTitle": "We usually don't start with an answer; We start with a question.",
+    "description": "Every project has its own conditions. Before suggesting a solution, we first understand your goods, constraints, risks and real priorities.",
+    "description1": "The goal is simple: compare the possible paths and help you make a clearer decision before execution begins.",
     "decisionLabel": "A clearer decision",
     "items": [
       {"title": "Understand the project", "desc": "A precise view of the goods, route, constraints and actual goals."},
@@ -84,6 +84,12 @@
     "viewAll": "View all articles",
     "readMore": "Read more",
     "minuteRead": "{minutes} min read"
+  },
+  "RealCases": {
+    "title": "Knowledge Base",
+    "subTitle": "What you should know before deciding.",
+    "description": "Practical guides and analysis to help you navigate trade and customs clearance with clearer information.",
+    "button": "View all reall cases"
   },
   "RouteCta": {
     "eyebrow": "Next step",

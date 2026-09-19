@@ -1,12 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import Button from "@/components/ui/button";
 
 export default async function RouteCta() {
     const t = await getTranslations("RouteCta");
 
     return (
-        <section className="relative overflow-hidden border-y border-white/6 py-20 sm:py-24">
+        <section className="relative overflow-hidden py-20 sm:py-24 bg-[var(--kardan-black)]">
             <div className="pointer-events-none absolute inset-0">
                 <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)]/6 blur-3xl" />
                 <svg className="absolute inset-0 h-full w-full opacity-35" viewBox="0 0 1200 260" fill="none" preserveAspectRatio="none" aria-hidden="true">
@@ -17,7 +18,6 @@ export default async function RouteCta() {
 
             <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8">
                 <p className="text-sm font-semibold tracking-[0.18em] text-[var(--color-accent)] uppercase">
-                    {t("eyebrow")}
                 </p>
                 <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--color-text-primary)] sm:text-4xl lg:text-5xl">
                     {t("title")}
@@ -26,13 +26,11 @@ export default async function RouteCta() {
                     {t("description")}
                 </p>
 
-                <Link
-                    href="#contactUs"
-                    className="group mt-8 inline-flex items-center gap-3 rounded-xl border border-[var(--color-accent)]/50 bg-[var(--color-accent)] px-6 py-3.5 text-sm font-semibold text-[#111] shadow-[0_10px_40px_rgba(174,128,27,0.16)] transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--hero-accent-hover)] hover:shadow-[0_14px_50px_rgba(174,128,27,0.25)]"
-                >
-                    {t("button")}
-                    <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-                </Link>
+                <div className="mt-8">
+                    <Button variant={"ghost"} className={"border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 px-15"}>
+                        {t("button")}
+                        <ArrowRight size={17} className="transition-transform duration-300 group-hover:translate-x-1 ltr:ml-5 rtl:mr-5 rtl:ml-0 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+                    </Button>                </div>
             </div>
         </section>
     );

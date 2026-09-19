@@ -7,7 +7,7 @@ type WhyUsCardProps = {
 };
 
 /** Single feature tile. Kept dumb/reusable so it can appear in other sections later. */
-export default function WhyUsCard({ title, desc, icon }: WhyUsCardProps) {
+export default function SolutionsCard({ title, desc, icon }: WhyUsCardProps) {
     return (
         <div className="m-2 flex cursor-pointer gap-4 rounded-[var(--radius-md)] border border-[var(--color-border)] p-4 sm:m-3 sm:p-5">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-[var(--color-accent)]/10">

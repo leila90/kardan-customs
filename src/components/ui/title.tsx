@@ -4,8 +4,8 @@ import { useLocale } from 'next-intl';
 type SectionTitleProps = {
     brand: string,
     title: string,
-    subTitle: string,
-    description: string,
+    subTitle?: string,
+    description?: string,
     marginTop?: string
 }
 
@@ -41,7 +41,8 @@ export default function Title(props: SectionTitleProps
                         </p>
                     </div>
                 </div>
-                <div className="font-light text-base flex items-center gap-2 overflow-visible mt-5">
+                {subTitle ? (
+                    <div className="font-light text-base flex items-center gap-2 overflow-visible mt-5">
                     {/* Divider SVG */}
                     <div className="icon-display">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -56,12 +57,12 @@ export default function Title(props: SectionTitleProps
                     <h3 className="mt-4 text-lg font-semibold text-[var(--color-text-primary)]">
                     {subTitle}
                 </h3>
-                </div>
-                <div className="font-light text-base flex items-center gap-2 overflow-visible mt-5">
+                </div>) : null}
+                {description ? (<div className="font-light text-base flex items-center gap-2 overflow-visible mt-5">
                     <h3 className="heading-4 text-[var(--color-text-primary)]">
                     {description}
                 </h3>
-                </div>
+                </div>) : null }
             </div>
     )
 }

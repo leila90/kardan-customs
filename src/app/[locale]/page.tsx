@@ -4,8 +4,9 @@ import ExperienceDomains from "@/components/sections/experience-domains/experien
 import KnowledgePreview from "@/components/sections/knowledge-preview/knowledge-preview";
 import PreActionConversation from "@/components/sections/pre-action-conversation/pre-action-conversation";
 import RouteCta from "@/components/sections/route-cta/route-cta";
-import WhyUs from "@/components/sections/why-us/why-us";
+import Solutions from "@/components/sections/solutions/solutions";
 import Hero from "@/components/sections/hero/hero";
+import RealCases from "@/components/sections/real-cases/real-cases";
 
 export default function Home() {
     return (
@@ -13,9 +14,9 @@ export default function Home() {
             <Hero />
             <HeroFooter />
             <PreActionConversation />
-            <WhyUs />
+            <Solutions />
             <ExperienceDomains />
-            <KnowledgePreview />
+            <RealCases />
             <RouteCta />
             <ContactUs />
         </>

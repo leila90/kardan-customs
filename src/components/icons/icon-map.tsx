@@ -27,7 +27,8 @@ import {
   Layers,
   type LucideIcon,
 } from "lucide-react";
-import type { IconKey } from "@/types";
+// import type { IconKey } from "@/types";
+import type { IconKey } from "@/types"
 
 export const iconMap: Record<IconKey, LucideIcon> = {
   search: Search,

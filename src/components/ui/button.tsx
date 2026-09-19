@@ -37,7 +37,7 @@ export default function Button({
                         variant === "secondary",
 
                     /* Ghost */
-                    "border-1 border-[var(--color-border)] bg-transparent text-[var(--color-border)] hover:bg-[var(--color-background-secondary)]/50":
+                    "border-1":
                         variant === "ghost",
                 },
 

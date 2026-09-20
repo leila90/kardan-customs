@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { ArrowUpLeft, ArrowUpRight } from "lucide-react";
 
-type KnowlegdeCardProps = {
+type RealCasesCardProps = {
     title: string;
     description: string;
     image: string;
@@ -15,7 +14,7 @@ export function RealCasesCard({
                                   image,
                                   imageAlt,
                                   href = "#",
-                              }: KnowlegdeCardProps) {
+                              }: RealCasesCardProps) {
     return (
         <a
             href={href}
@@ -162,10 +161,7 @@ export function RealCasesCard({
             flex min-w-0 flex-1
             flex-col
             justify-center
-            px-4 py-3
-            sm:px-2
-            text-center
-            -mr-15
+            min-w-0 flex-1 px-3 py-3 text-center sm:px-4
           "
                 >
                     <h3
@@ -236,7 +232,6 @@ export function RealCasesCard({
                 </div>
             </div>
 
-            {/* Bottom accent */}
             <span
                 aria-hidden="true"
                 className="

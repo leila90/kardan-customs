@@ -1,5 +1,5 @@
 import {ArrowRight} from "lucide-react";
-import { getTranslations} from "next-intl/server";
+import {getTranslations} from "next-intl/server";
 import {RealCasesCard} from "@/components/ui/cards/real_cases_card";
 import Button from "@/components/ui/button";
 import Title from "@/components/ui/title";
@@ -9,7 +9,7 @@ export default async function RealCases() {
     const items = t.raw("items") as { title: string; desc: string, image: string }[];
 
     return (
-        <section id="knowledge" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
+        <section id="real-cases" className="mx-5 my-5 bg-transparent md:mx-10 lg:mx-30 md:my-10">
 
             <Title brand={t("brand")} title={t("title")}/>
 
@@ -20,7 +20,7 @@ export default async function RealCases() {
 
                     <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-4">
 
-                        {/* Knowledge Cards - 3/4 */}
+                        {/* Case cards - 3/4 */}
                         <div
                             className="relative grid grid-cols-1 gap-5 md:grid-cols-2 lg:col-span-3 lg:grid-cols-4">
                             {items.map((post, index) => (
@@ -43,7 +43,7 @@ export default async function RealCases() {
                             ))}
                         </div>
 
-                        {/* Empty / Future Content - 1/4 */}
+                        {/* Reserved space for the cases CTA. */}
                         <div className="flex w-full lg:col-span-1 items-center justify-center">
                             <Button variant={"ghost"}
                                     className={"border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 px-15"}>

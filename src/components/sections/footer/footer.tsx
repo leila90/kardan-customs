@@ -30,7 +30,7 @@ export default async function Footer({ locale }: { locale: Locale }) {
                     <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
                         <div className="flex w-full flex-col items-center text-center md:w-[45%] md:items-start md:text-start lg:w-[35%]">
                             <Image src="/images/logo/logo-f-w.png" alt={siteConfig.name} width={200} height={34} />
-                            <div className="my-4 h-px w-full bg-linear-to-l from-[var(--color-accent)] to-transparent" />
+                            <div className="my-4 h-px w-full rtl:bg-linear-to-l bg-linear-to-r from-[var(--color-accent)] to-transparent" />
                             <p className="max-w-sm text-sm text-white/60">
                                 {t("about")}
                             </p>

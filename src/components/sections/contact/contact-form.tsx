@@ -1,3 +1,5 @@
+import Button from "@/components/ui/button";
+
 type ContactFormLabels = {
     name: string;
     namePlaceholder: string;
@@ -41,12 +43,15 @@ export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
                 <p className="max-w-xs text-xs text-[var(--color-text-muted)] sm:text-sm">
                     {labels.agreement}
                 </p>
-                <button
-                    type="submit"
-                    className="cursor-pointer rounded-full bg-[var(--color-primary)] px-8 py-3 text-sm text-[var(--color-background)] transition duration-300 hover:opacity-90 md:px-16"
-                >
+                {/*<button*/}
+                {/*    type="submit"*/}
+                {/*    className="cursor-pointer rounded-full bg-[var(--color-primary)] px-8 py-3 text-sm text-[var(--color-background)] transition duration-300 hover:opacity-90 md:px-16"*/}
+                {/*>*/}
+                {/*    {labels.submit}*/}
+                {/*</button>*/}
+                <Button variant={"ghost"} className={"mx-1.5 h-10 shrink-0 cursor-pointer rounded-full border-[var(--color-accent)] bg-linear-to-b from-[var(--color-accent)]/50 to-[var(--color-accent)]/20 hover:from-[var(--color-accent)]/20 hover:to-[var(--color-accent)]/50 px-4 text-sm text-white transition active:scale-95"}>
                     {labels.submit}
-                </button>
+                </Button>
             </div>
         </form>
     );

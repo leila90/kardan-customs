@@ -29,7 +29,7 @@ export default function Title(props: SectionTitleProps
                     >
                         {title}
                     </h3>
-                    <div className="relative flex flex-col items-end w-full lg:w-[340px] h-full">
+                    <div className="relative flex min-w-0 flex-1 flex-col items-end lg:max-w-[340px]">
                         <div
                              className="h-px w-full from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0 rtl:bg-linear-to-l ltr:bg-linear-to-r">
                         </div>

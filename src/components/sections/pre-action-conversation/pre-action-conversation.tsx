@@ -18,7 +18,6 @@ export default async function PreActionConversation() {
         <section id="pre-action" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
             <Title brand={t("title")} title={t("title")} subTitle={t("subTitle")} description={t("description")}/>
 
-            {/*<div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">*/}
                 <div className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
                     {items.map((item, index) => {
                         const Icon = cardIcons[index] ?? Lightbulb;
@@ -41,17 +40,6 @@ export default async function PreActionConversation() {
                         );
                     })}
                 </div>
-            {/*</div>*/}
-
-            <style>{`
-                @keyframes conversation-flow {
-                    0%, 100% { opacity: .55; stroke-dasharray: 1 0; }
-                    50% { opacity: 1; stroke-dasharray: 9 5; }
-                }
-                @keyframes conversation-dash {
-                    to { stroke-dashoffset: -48; }
-                }
-            `}</style>
         </section>
     );
 }

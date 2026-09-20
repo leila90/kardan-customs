@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {Link} from "@/i18n/navigation";
 
 type RealCasesCardProps = {
     title: string;
@@ -16,7 +17,7 @@ export function RealCasesCard({
     href = "#",
 }: RealCasesCardProps) {
     return (
-        <a
+        <Link
             href={href}
             className="group relative isolate block h-[180px] w-full overflow-hidden rounded-[var(--radius-md)] border border-white/10 bg-[var(--kardan-black)] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:shadow-[0_14px_45px_rgba(0,0,0,0.30)] sm:h-[200px]"
         >
@@ -59,6 +60,6 @@ export function RealCasesCard({
                 aria-hidden="true"
                 className="pointer-events-none absolute bottom-0 start-0 h-px w-0 bg-[var(--color-accent)] opacity-0 transition-all duration-500 group-hover:w-full group-hover:opacity-60"
             />
-        </a>
+        </Link>
     );
 }

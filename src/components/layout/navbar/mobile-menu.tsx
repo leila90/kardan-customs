@@ -7,9 +7,8 @@ import Button from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import LanguageSwitcher from "@/components/ui/language-switcher";
 
-import Link from "next/link";
+import Link from "@/i18n/navigation";
 import {navItems} from "./nav-items";
-import clsx from "clsx";
 
 interface MobileMenuProps {
     labels: Record<string, string>;
@@ -33,13 +32,7 @@ export default function MobileMenu({
         )}
 
             {isOpen && (
-                <div
-                    className="
-            fixed
-            inset-0
-            z-[100]
-          "
-                >
+                <div className="fixed inset-0 z-[100] bg-[var(--color-background)]/95 backdrop-blur-xl">
                     <div
                         className="
               flex
@@ -50,9 +43,6 @@ export default function MobileMenu({
               border-[var(--color-border)]
             "
                     >
-            <span className="font-bold">
-
-            </span>
 
                         <button
                             onClick={() => setIsOpen(false)}
@@ -70,7 +60,7 @@ export default function MobileMenu({
                                 {navItems.map((item) => (
                                     <li key={item.key}>
                                         <Link
-                                            href={item.slug}
+                                            href={item.slug === "" ? "/" : `/${item.slug}`}
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {labels[item.key]}

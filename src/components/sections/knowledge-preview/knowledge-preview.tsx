@@ -1,11 +1,9 @@
 import {ArrowRight, ArrowUpLeft, BookOpen} from "lucide-react";
 import {getLocale, getTranslations} from "next-intl/server";
 import {Link} from "@/i18n/navigation";
-import BlogCard from "@/components/sections/blog/blog-card";
 import {getAllPosts} from "@/lib/blog/posts";
 import type {SiteLocale} from "@/lib/site-config";
 import {RealCasesCard} from "@/components/ui/cards/real_cases_card";
-import GlassCard from "@/components/ui/cards/glass-card";
 import Button from "@/components/ui/button";
 
 export default async function KnowledgePreview() {
@@ -14,7 +12,7 @@ export default async function KnowledgePreview() {
     const posts = getAllPosts().slice(0, 4);
 
     return (
-        <section id="knowledge" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
+        <section id="knowledge" className="mx-5 my-5 bg-transparent md:mx-10 lg:mx-30 md:my-10">
             <div className="">
                 <div className="mb-10 flex flex-col gap-6 sm:mb-12 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
@@ -42,12 +40,7 @@ export default async function KnowledgePreview() {
                     </Link>
                 </div>
 
-                <div className="relative">
-                    <div className="pointer-events-none absolute -inset-6 rounded-[2rem]"/>
-                    <div className="relative">
-                        <div className="pointer-events-none absolute -inset-6 rounded-[2rem]"/>
-
-                        <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-4">
+                <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-4">
 
                             {/* Knowledge Cards - 3/4 */}
                             <div
@@ -66,7 +59,7 @@ export default async function KnowledgePreview() {
                                             description={post.description[locale]}
                                             image={post.coverImage}
                                             imageAlt="Customs vehicle"
-                                            href="/services"
+                                            href={`/blog/${post.slug}`}
                                         />
                                     </div>
                                 ))}
@@ -81,8 +74,6 @@ export default async function KnowledgePreview() {
                             </div>
 
                         </div>
-                    </div>
-                </div>
             </div>
         </section>
     );

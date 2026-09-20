@@ -26,7 +26,7 @@ export type BlogPost = {
 const posts: BlogPost[] = [
     {
         slug: "customs-clearance-process",
-        coverImage: "/images/why-us/image.png",
+        coverImage: "/images/knowlegde/car.webp",
         publishedAt: "2026-05-01",
         updatedAt: "2026-05-01",
         minuteRead: 6,
@@ -53,7 +53,7 @@ const posts: BlogPost[] = [
     },
     {
         slug: "order-registration-guide",
-        coverImage: "/images/why-us/image.png",
+        coverImage: "/images/knowlegde/pharma.png",
         publishedAt: "2026-05-10",
         updatedAt: "2026-05-10",
         minuteRead: 5,
@@ -78,12 +78,37 @@ const posts: BlogPost[] = [
     },
     {
         slug: "customs-tariff-basics",
-        coverImage: "/images/why-us/image.png",
+        coverImage: "/images/knowlegde/carPart.webp",
         publishedAt: "2026-05-18",
         updatedAt: "2026-05-18",
         minuteRead: 4,
         title: {
             fa: "آشنایی با تعرفه گمرکی و نحوه محاسبه آن",
+            en: "Understanding Customs Tariffs and How They're Calculated",
+        },
+        description: {
+            fa: "تعرفه گمرکی چگونه تعیین می‌شود و چه عواملی بر آن اثر می‌گذارند؟",
+            en: "How customs tariffs are determined and which factors influence them.",
+        },
+        content: {
+            fa: [
+                "هر کالا بر اساس کد تعرفه هشت‌رقمی (HS Code) شناسایی و طبقه‌بندی می‌شود.",
+                "نرخ حقوق ورودی بر اساس این کد و مبدأ کالا محاسبه می‌شود.",
+            ],
+            en: [
+                "Every product is identified and classified using an eight-digit HS Code.",
+                "The import duty rate is then calculated based on that code and the country of origin.",
+            ],
+        },
+    },
+    {
+        slug: "customs-tariff-basics1",
+        coverImage: "/images/knowlegde/car.webp",
+        publishedAt: "2026-05-18",
+        updatedAt: "2026-05-18",
+        minuteRead: 4,
+        title: {
+            fa: "آشنایی با تعرفه گمرکی و نحوه محاسبه آن1",
             en: "Understanding Customs Tariffs and How They're Calculated",
         },
         description: {

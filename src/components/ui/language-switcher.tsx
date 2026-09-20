@@ -95,7 +95,7 @@ export default function LanguageSwitcher() {
                 aria-expanded={open}
                 onClick={() => setOpen((p) => !p)}
                 className={clsx(
-                    "inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm w-30",
+                    "inline-flex items-center gap-2 rounded-[var(--radius-md)] px-3 py-3 text-sm w-30",
                     "bg-white text-zinc-800 hover:bg-zinc-50",
                     "focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500",
                     "dark:bg-neutral-900 dark:text-black dark:hover:bg-neutral-800",

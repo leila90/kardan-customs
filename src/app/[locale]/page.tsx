@@ -1,19 +1,24 @@
-
 import ContactUs from "@/components/sections/contact/contact-us";
 import HeroFooter from "@/components/sections/footer/hero-footer";
-import Features from "@/components/sections/features/features";
-import WhyUs from "@/components/sections/why-us/why-us";
-import KardanHero from "@/components/sections/kardan-hero/kardan-hero";
+import ExperienceDomains from "@/components/sections/experience-domains/experience-domains";
+import KnowledgePreview from "@/components/sections/knowledge-preview/knowledge-preview";
+import PreActionConversation from "@/components/sections/pre-action-conversation/pre-action-conversation";
+import RouteCta from "@/components/sections/route-cta/route-cta";
+import Solutions from "@/components/sections/solutions/solutions";
 import Hero from "@/components/sections/hero/hero";
+import RealCases from "@/components/sections/real-cases/real-cases";
 
 export default function Home() {
     return (
         <>
-            <Hero></Hero>
-            <HeroFooter/>
-            <Features/>
-            <WhyUs/>
-            <ContactUs/>
+            <Hero />
+            <HeroFooter />
+            <PreActionConversation />
+            <Solutions />
+            <ExperienceDomains />
+            <RealCases />
+            <RouteCta />
+            <ContactUs />
         </>
     );
 }

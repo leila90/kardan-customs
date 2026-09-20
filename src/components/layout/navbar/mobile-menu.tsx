@@ -7,7 +7,7 @@ import Button from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/theme-toggle";
 import LanguageSwitcher from "@/components/ui/language-switcher";
 
-import Link from "@/i18n/navigation";
+import {Link} from "@/i18n/navigation";
 import {navItems} from "./nav-items";
 
 interface MobileMenuProps {

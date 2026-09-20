@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useLocale } from 'next-intl';
 
 type SectionTitleProps = {
     brand: string,
@@ -11,7 +10,6 @@ type SectionTitleProps = {
 
 export default function Title(props: SectionTitleProps
 ) {
-    const locale = useLocale();
     const {brand, title, subTitle, description, marginTop} = props
     return (
 
@@ -33,7 +31,7 @@ export default function Title(props: SectionTitleProps
                     </h3>
                     <div className="relative flex flex-col items-end w-full lg:w-[340px] h-full">
                         <div
-                            className={`w-full h-px ${locale === "fa" ? "bg-linear-to-l" : "bg-linear-to-r"} from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0`}>
+                             className="h-px w-full from-[var(--color-text-primary)] via-[var(--color-text-primary)]/50 to-[var(--color-text-primary)]/0 rtl:bg-linear-to-l ltr:bg-linear-to-r">
                         </div>
 
                         <p className="m-0 lg:text-[9px] text-[7px] font-bold absolute bottom-1">

@@ -1,9 +1,9 @@
 export default function HeroFooter() {
     return (
-        <section>
-                <div className="bg-[var(--color-background)] relative rounded-tr-4xl rounded-tl-4xl">
+        <section aria-hidden="true">
+                <div className="relative rounded-t-4xl bg-[var(--color-background)]">
                     <div
-                        className="bg-[url('/images/footer/hero-footer.png')] opacity-80  relative z-2 -mt-30 h-40 w-full bg-cover bg-no-repeat">
+                        className="relative z-2 -mt-16 h-24 w-full bg-[url('/images/footer/hero-footer.png')] bg-cover bg-center bg-no-repeat opacity-80 sm:-mt-24 sm:h-32 lg:-mt-30 lg:h-40">
 
                     </div>
                 </div>

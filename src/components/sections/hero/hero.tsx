@@ -19,10 +19,26 @@ export default async function Hero() {
     // const t = await getTranslations('Hero');
     return (
         <section className="flex min-h-screen flex-col items-center gap-10 lg:flex-row bg-[var(--color-primary)]">
+            <div className={"flex absolute z-50 items-center justify-center"}>
+                <HeroFooterCard className={"text-center py-5 cursor-default"}>
+                    <div className={"flex justify-center"}>
+                        <div
+                            className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border text-[var(--color-text-primary)] border-[var(--color-secondary)] text-[var(--color-secondary)] transition-transform duration-300 group-hover:scale-105">
+                            <Network size={21} strokeWidth={1.6}/>
+                        </div>
+                    </div>
+                    <h3 className="text-base font-semibold text-[var(--color-text-primary)] sm:text-lg">
+                        {t("title")}
+                    </h3>
+                    {/*<p className="mt-3 text-sm leading-7 text-[var(--color-text-muted)]">*/}
+                    {/*    {item.desc}*/}
+                    {/*</p>*/}
+                </HeroFooterCard>
+            </div>
             <div className={"flex flex-col"}>
                 <div className="stage">
-                    <Image className="base" src={"/images/hero/hero.png"} alt={"hero"} width={1000}
-                           height={100}></Image>
+                    {/*<Image className="base" src={"/images/hero/hero.png"} alt={"hero"} width={1000}*/}
+                    {/*       height={100}></Image>*/}
                     <div className="shade"></div>
                     <svg style={{
                         position: "absolute",

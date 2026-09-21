@@ -22,7 +22,7 @@ export default async function Solutions() {
     const items = t.raw("items") as { title: string; desc: string }[];
 
     return (
-        <section id="aboutUs" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
+        <section id="solutions" className="mx-5 my-5 bg-transparent md:mx-30 md:my-10">
             <Title brand={t("brand")} title={t("title")} subTitle={t("subTitle")} description={t("description")}/>
             <div
                 className=" mt-12 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-16 lg:grid-cols-6 lg:gap-0 ">

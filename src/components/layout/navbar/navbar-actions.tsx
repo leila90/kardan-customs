@@ -28,7 +28,8 @@ export default function NavbarActions({
           {/*  >*/}
           {/*      {cta['cta']}*/}
           {/*  </a>*/}
-            <Button className="w-full">
+
+            <Button variant={"ghost"} className={"border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 px-5"}>
                 {cta['cta']}
             </Button>
         </div>

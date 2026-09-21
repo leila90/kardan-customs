@@ -5,7 +5,7 @@ export const navItems = [
     },
     {
         key: "solutions",
-        slug: "solutions",
+        slug: "#solutions",
     },
     {
         key: "about",
@@ -25,6 +25,6 @@ export const navItems = [
     },
     {
         key: "contact",
-        slug: "contact",
+        slug: "#contactUs",
     },
 ];

@@ -1,7 +1,7 @@
 "use client";
 
 import {useState} from "react";
-import {Menu, X} from "lucide-react";
+import {ArrowRight, Menu, X} from "lucide-react";
 
 import Button from "@/components/ui/button";
 import ThemeToggle from "@/components/ui/theme-toggle";
@@ -86,7 +86,7 @@ export default function MobileMenu({
                         </div>
 
                         <div className="mt-8">
-                            <Button className="w-full">
+                            <Button variant={"ghost"} className={"border-[var(--color-accent)] bg-transparent text-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 px-5"}>
                                 {cta['cta']}
                             </Button>
                         </div>

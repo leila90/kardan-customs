@@ -7,7 +7,7 @@ interface GlassCardProps {
     className?: string;
 }
 
-export default function HeroFooterCard({
+export default function HeroCard({
                                       children,
                                       className = "",
                                   }: GlassCardProps) {

@@ -68,7 +68,7 @@ export default async function Hero() {
                             "
                         >
                             <Image
-                                src="/images/hero/person.png"
+                                src="/images/hero/gold-logo.png"
                                 alt=""
                                 width={600}
                                 height={800}

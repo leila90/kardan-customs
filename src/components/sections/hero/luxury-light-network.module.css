@@ -1,0 +1,74 @@
+.background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: radial-gradient(circle at 18% 30%, rgba(166, 112, 26, 0.055), transparent 33%), radial-gradient(circle at 80% 64%, rgba(214, 157, 52, 0.035), transparent 36%);
+}
+
+.network {
+    position: absolute;
+    inset: -4%;
+    width: 108%;
+    height: 108%;
+    opacity: 0.9;
+    transform: scale(1.02);
+    animation: networkDrift 24s ease-in-out infinite alternate;
+}
+
+.travelingLines path {
+    fill: none;
+    stroke: url(#kardan-gold-line);
+    stroke-linecap: round;
+    stroke-dasharray: 390 850;
+    vector-effect: non-scaling-stroke;
+    opacity: 0;
+    animation: lightTravel 22s linear infinite;
+}
+.particle { transform-box: fill-box; transform-origin: center; animation: particlePulse 7.5s ease-in-out infinite; }
+.ambientGlow {
+    position: absolute;
+    inset: 8% 4%;
+    opacity: 0.22;
+    filter: blur(70px);
+    background: radial-gradient(ellipse, rgba(190, 126, 29, 0.15), transparent 68%);
+    animation: ambientBreath 14s ease-in-out infinite alternate;
+}
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 24%, rgba(0, 0, 0, 0.46) 100%); }
+.bottomFade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12), transparent 45%, #000 100%); }
+
+@keyframes lightTravel {
+    0% { stroke-dashoffset: 1630; opacity: 0; }
+    8% { opacity: 0.2; }
+    24% { opacity: 0.78; }
+    78% { opacity: 0.6; }
+    94% { opacity: 0.16; }
+    100% { stroke-dashoffset: -1630; opacity: 0; }
+}
+@keyframes particlePulse {
+    0%, 100% { opacity: 0.08; transform: scale(0.55); }
+    16% { opacity: 0.3; transform: scale(0.78); }
+    38% { opacity: 0.96; transform: scale(1.14); }
+    49% { opacity: 0.2; transform: scale(0.68); }
+    71% { opacity: 0.72; transform: scale(1); }
+    84% { opacity: 0.16; transform: scale(0.62); }
+}
+@keyframes networkDrift {
+    from { transform: scale(1.02) translate3d(-0.7%, -0.4%, 0); }
+    to { transform: scale(1.045) translate3d(0.8%, 0.55%, 0); }
+}
+@keyframes ambientBreath {
+    from { opacity: 0.14; transform: scale(0.94); }
+    to { opacity: 0.28; transform: scale(1.08); }
+}
+
+@media (max-width: 640px) {
+    .network { width: 135%; left: -17.5%; opacity: 0.72; }
+    .travelingLines path { opacity: 0.72; }
+    .glowParticles { opacity: 0.72; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .network, .travelingLines path, .particle, .ambientGlow { animation: none; }
+    .travelingLines path { opacity: 0.28; }
+    .particle { opacity: 0.55; }
+}

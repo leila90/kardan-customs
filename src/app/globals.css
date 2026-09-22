@@ -235,3 +235,90 @@ body {
   .debug-label { display:none; }
 }
 
+@keyframes networkDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, -12px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes goldPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes goldTwinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.7);
+    box-shadow: 0 0 0 rgba(198, 146, 43, 0);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(198, 146, 43, 0.35);
+  }
+}
+
+.gold-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: #d9a441;
+  animation: goldTwinkle 3.5s ease-in-out infinite;
+}
+@keyframes networkDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, -12px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes goldPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}

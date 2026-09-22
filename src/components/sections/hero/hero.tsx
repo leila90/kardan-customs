@@ -11,6 +11,7 @@ import HeroFooterCard from "@/components/ui/cards/hero-footer-card";
 import HerorCard from "@/components/ui/cards/hero-card";
 import GoldenInfoOrb from "@/components/ui/golden-info-orb";
 import ExpandableInfoRow from "@/components/ui/expandable-info-row";
+import LuxuryLightNetwork from "@/components/sections/hero/luxury-light-network";
 
 const cardIcons = [Network, ShieldCheck, GitBranch, Lightbulb];
 
@@ -27,8 +28,33 @@ export default async function Hero() {
 
     return (
         <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black">
+            {/* Hero Background */}
+            <div className="pointer-events-none absolute inset-0 z-0">
+                <Image
+                    src="/images/hero/hero-bg-3.png"
+                    alt=""
+                    fill
+                    priority
+                    className="object-cover object-center"
+                />
+
+                {/* Fade to black */}
+                <div
+                    className="
+            absolute
+            inset-0
+            bg-gradient-to-b
+            from-transparent
+            via-black/30
+            to-black
+        "
+                />
+            </div>
+            <div className="pointer-events-none absolute inset-0 z-1">
+                <LuxuryLightNetwork />
+            </div>
             {/* Hero Main Content */}
-            <div className="relative flex min-h-0 flex-1 px-4">
+            <div className="relative flex min-h-0 flex-1 px-4 z-20">
                 <div
                     dir="ltr"
                     className={`

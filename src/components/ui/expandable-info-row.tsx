@@ -17,11 +17,80 @@ export default function ExpandableInfoRow({
 
     return (
         <div
-            className="w-full my-4"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-        >
+            className="flex w-full my-4"
+        >  {/* Icon */}
+            <div className="mx-2 relative flex h-15 w-15 shrink-0 items-center justify-center">
+                {/* Glow */}
+                <span
+                    className={`
+                                absolute
+                                h-15
+                                w-15
+                                rounded-[var(--radius-md)]
+                                bg-[#C6922B]/15
+                                blur-xl
+
+                                transition-all
+                                duration-1000
+                                ease-out
+
+                                ${
+                        isOpen
+                            ? "scale-110 opacity-100"
+                            : "scale-90 opacity-70"
+                    }
+                            `}
+                />
+
+                {/* Gold logo */}
+                <span
+                    className={`
+                                relative
+                                flex
+                                h-15
+                                w-15
+                                items-center
+                                justify-center
+                                overflow-hidden
+                                rounded-[var(--radius-md)]
+
+                                border
+                                border-[#D9A441]/70
+
+                                bg-[radial-gradient(
+                                    circle_at_35%_30%,
+                                    #FFE8A3,
+                                    #D9A441_35%,
+                                    #9A6819_75%,
+                                    #5F3D0C
+                                )]
+
+                                shadow-[
+                                    inset_0_1px_1px_rgba(255,255,255,0.65),
+                                    0_0_16px_rgba(198,146,43,0.22)
+                                ]
+
+                                transition-transform
+                                duration-1000
+                                ease-[cubic-bezier(0.22,1,0.36,1)]
+
+                                group-hover:scale-[1.04]
+                            `}
+                >
+                            <Image
+                                src="/images/hero/gold-logo-lux.png"
+                                alt=""
+                                width={35}
+                                height={35}
+                                priority
+                                className="h-auto w-9 object-contain"
+                            />
+                        </span>
+            </div>
             <div
+
+                onMouseEnter={() => setIsOpen(true)}
+                onMouseLeave={() => setIsOpen(false)}
                 className={`
                 cursor-pointer
                     group
@@ -31,7 +100,7 @@ export default function ExpandableInfoRow({
                     max-w-full
                     items-center
                     overflow-hidden
-                    rounded-[var(--radius-lg)]
+                    rounded-[var(--radius-md)]
 
                     border
                     border-[var(--color-accent)]
@@ -95,75 +164,75 @@ export default function ExpandableInfoRow({
                 {/* Content */}
                 <div className="relative z-10 flex h-full min-w-0 w-full items-center">
 
-                    {/* Icon */}
-                    <div className="relative flex h-15 w-15 shrink-0 items-center justify-center">
-                        {/* Glow */}
-                        <span
-                            className={`
-                                absolute
-                                h-12
-                                w-12
-                                rounded-full
-                                bg-[#C6922B]/15
-                                blur-xl
+                    {/*/!* Icon *!/*/}
+                    {/*<div className="relative flex h-15 w-15 shrink-0 items-center justify-center">*/}
+                    {/*    /!* Glow *!/*/}
+                    {/*    <span*/}
+                    {/*        className={`*/}
+                    {/*            absolute*/}
+                    {/*            h-12*/}
+                    {/*            w-12*/}
+                    {/*            rounded-full*/}
+                    {/*            bg-[#C6922B]/15*/}
+                    {/*            blur-xl*/}
 
-                                transition-all
-                                duration-1000
-                                ease-out
+                    {/*            transition-all*/}
+                    {/*            duration-1000*/}
+                    {/*            ease-out*/}
 
-                                ${
-                                isOpen
-                                    ? "scale-110 opacity-100"
-                                    : "scale-90 opacity-70"
-                            }
-                            `}
-                        />
+                    {/*            ${*/}
+                    {/*            isOpen*/}
+                    {/*                ? "scale-110 opacity-100"*/}
+                    {/*                : "scale-90 opacity-70"*/}
+                    {/*        }*/}
+                    {/*        `}*/}
+                    {/*    />*/}
 
-                        {/* Gold logo */}
-                        <span
-                            className={`
-                                relative
-                                flex
-                                h-12
-                                w-12
-                                items-center
-                                justify-center
-                                overflow-hidden
-                                rounded-full
+                    {/*    /!* Gold logo *!/*/}
+                    {/*    <span*/}
+                    {/*        className={`*/}
+                    {/*            relative*/}
+                    {/*            flex*/}
+                    {/*            h-12*/}
+                    {/*            w-12*/}
+                    {/*            items-center*/}
+                    {/*            justify-center*/}
+                    {/*            overflow-hidden*/}
+                    {/*            rounded-full*/}
 
-                                border
-                                border-[#D9A441]/70
+                    {/*            border*/}
+                    {/*            border-[#D9A441]/70*/}
 
-                                bg-[radial-gradient(
-                                    circle_at_35%_30%,
-                                    #FFE8A3,
-                                    #D9A441_35%,
-                                    #9A6819_75%,
-                                    #5F3D0C
-                                )]
+                    {/*            bg-[radial-gradient(*/}
+                    {/*                circle_at_35%_30%,*/}
+                    {/*                #FFE8A3,*/}
+                    {/*                #D9A441_35%,*/}
+                    {/*                #9A6819_75%,*/}
+                    {/*                #5F3D0C*/}
+                    {/*            )]*/}
 
-                                shadow-[
-                                    inset_0_1px_1px_rgba(255,255,255,0.65),
-                                    0_0_16px_rgba(198,146,43,0.22)
-                                ]
+                    {/*            shadow-[*/}
+                    {/*                inset_0_1px_1px_rgba(255,255,255,0.65),*/}
+                    {/*                0_0_16px_rgba(198,146,43,0.22)*/}
+                    {/*            ]*/}
 
-                                transition-transform
-                                duration-1000
-                                ease-[cubic-bezier(0.22,1,0.36,1)]
+                    {/*            transition-transform*/}
+                    {/*            duration-1000*/}
+                    {/*            ease-[cubic-bezier(0.22,1,0.36,1)]*/}
 
-                                group-hover:scale-[1.04]
-                            `}
-                        >
-                            <Image
-                                src="/images/hero/gold-logo-lux.png"
-                                alt=""
-                                width={35}
-                                height={35}
-                                priority
-                                className="h-auto w-9 object-contain"
-                            />
-                        </span>
-                    </div>
+                    {/*            group-hover:scale-[1.04]*/}
+                    {/*        `}*/}
+                    {/*    >*/}
+                    {/*        <Image*/}
+                    {/*            src="/images/hero/gold-logo-lux.png"*/}
+                    {/*            alt=""*/}
+                    {/*            width={35}*/}
+                    {/*            height={35}*/}
+                    {/*            priority*/}
+                    {/*            className="h-auto w-9 object-contain"*/}
+                    {/*        />*/}
+                    {/*    </span>*/}
+                    {/*</div>*/}
 
                     {/* Title */}
                     <div
@@ -192,29 +261,25 @@ export default function ExpandableInfoRow({
                     </div>
 
                     {/* Golden separator */}
-                    <div
+                    {isOpen ? <div
                         className={`
-                            mx-1
+                            mx-5
                             h-9
                             w-px
                             shrink-0
 
                             bg-gradient-to-b
                             from-transparent
-                            via-[#D9A441]
+                            via-[var(--color-accent)]
                             to-transparent
 
                             transition-all
                             duration-700
                             ease-out
-
-                            ${
-                            isOpen
-                                ? "scale-y-100 opacity-100"
-                                : "scale-y-0 opacity-0"
+                             "scale-y-100 opacity-100"
                         }
                         `}
-                    />
+                    /> : null}
 
                     {/* Description */}
                     <div
@@ -226,7 +291,6 @@ export default function ExpandableInfoRow({
                             transition-all
                             duration-[900ms]
                             ease-[cubic-bezier(0.22,1,0.36,1)]
-
                             ${
                             isOpen
                                 ? "opacity-100"

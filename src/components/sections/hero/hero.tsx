@@ -9,6 +9,7 @@ import {
 
 import HeroFooterCard from "@/components/ui/cards/hero-footer-card";
 import HerorCard from "@/components/ui/cards/hero-card";
+import GoldenInfoOrb from "@/components/ui/golden-info-orb";
 
 const cardIcons = [Network, ShieldCheck, GitBranch, Lightbulb];
 
@@ -68,7 +69,7 @@ export default async function Hero() {
                             "
                         >
                             <Image
-                                src="/images/hero/gold-logo.png"
+                                src="/images/hero/gold-logo-lux.png"
                                 alt=""
                                 width={600}
                                 height={800}
@@ -131,6 +132,10 @@ export default async function Hero() {
                                     {t("title")}
                                 </h3>
                             </HerorCard>
+                            <GoldenInfoOrb
+                                title="راهکارهای هوشمند"
+                                description="راهکارهای یکپارچه و تخصصی برای طراحی، اجرا و مدیریت زیرساخت‌های فناوری اطلاعات."
+                            />
                         </div>
                     </div>
                 </div>

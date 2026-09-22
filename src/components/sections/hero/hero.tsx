@@ -10,6 +10,7 @@ import {
 import HeroFooterCard from "@/components/ui/cards/hero-footer-card";
 import HerorCard from "@/components/ui/cards/hero-card";
 import GoldenInfoOrb from "@/components/ui/golden-info-orb";
+import ExpandableInfoRow from "@/components/ui/expandable-info-row";
 
 const cardIcons = [Network, ShieldCheck, GitBranch, Lightbulb];
 
@@ -109,6 +110,8 @@ export default async function Hero() {
                     <div
                         dir={isEnglish ? "ltr" : "rtl"}
                         className="
+
+                                mt-20
                             flex
                             min-w-0
                             flex-1
@@ -119,23 +122,47 @@ export default async function Hero() {
                     >
                         <div className="w-full max-w-3xl">
                             {/* Hero content */}
-                            <HerorCard>
-                                <h3
-                                    className="
-                                        text-sm
-                                        font-semibold
-                                        text-[var(--color-text-primary)]
-                                        sm:text-base
-                                        lg:text-lg
-                                    "
-                                >
-                                    {t("title")}
-                                </h3>
-                            </HerorCard>
-                            <GoldenInfoOrb
-                                title="راهکارهای هوشمند"
-                                description="راهکارهای یکپارچه و تخصصی برای طراحی، اجرا و مدیریت زیرساخت‌های فناوری اطلاعات."
-                            />
+                            {/*<HerorCard>*/}
+                            {/*    <h3*/}
+                            {/*        className="*/}
+                            {/*            text-sm*/}
+                            {/*            font-semibold*/}
+                            {/*            text-[var(--color-text-primary)]*/}
+                            {/*            sm:text-base*/}
+                            {/*            lg:text-lg*/}
+                            {/*        "*/}
+                            {/*    >*/}
+                            {/*        {t("title")}*/}
+                            {/*    </h3>*/}
+                            {/*</HerorCard>*/}
+                            {/*<GoldenInfoOrb*/}
+                            {/*    title="راهکارهای هوشمند"*/}
+                            {/*    description="راهکارهای یکپارچه و تخصصی برای طراحی، اجرا و مدیریت زیرساخت‌های فناوری اطلاعات."*/}
+                            {/*/>*/}
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
+                                <ExpandableInfoRow
+                                    title="زیرساخت هوشمند"
+                                    description="راهکارهای یکپارچه برای طراحی و اجرای زیرساخت‌های مدرن فناوری اطلاعات."
+                                />
                         </div>
                     </div>
                 </div>

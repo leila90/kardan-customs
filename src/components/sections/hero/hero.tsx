@@ -50,11 +50,11 @@ export default async function Hero() {
         "
                 />
             </div>
-            <div className="pointer-events-none absolute inset-0 z-1">
+            {/* Hero Main Content */}
+            <div className="pointer-events-none absolute inset-0 z-0">
                 <LuxuryLightNetwork />
             </div>
-            {/* Hero Main Content */}
-            <div className="relative flex min-h-0 flex-1 px-4 z-20">
+            <div className="relative flex min-h-0 flex-1 px-4">
                 <div
                     dir="ltr"
                     className={`

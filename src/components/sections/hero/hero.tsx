@@ -26,7 +26,6 @@ export default async function Hero() {
     }[];
 
     const isEnglish = locale === "en";
-
     return (
         <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-[#050909]">
 

@@ -150,7 +150,7 @@ export default function HeroNetworkBackground({
     }, []);
 
     return (
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#050909]" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#050909] m-10" aria-hidden="true">
             <svg
                 ref={svgRef}
                 viewBox="0 0 1672 941"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const NETWORK_PATHS = [
     "M210 210 C258 199 295 217 329 230 C370 250 389 236 410 231 C461 204 497 184 555 190 C646 177 662 254 735 284 C787 306 811 308 841 352 C882 413 894 455 946 466",
@@ -46,24 +46,16 @@ function LightPath({ d, exchange = false }: { d: string; exchange?: boolean }) {
 }
 
 interface HeroNetworkBackgroundProps {
-    /** نمایش یا مخفی‌کردن کنترل توقف انیمیشن */
-    showControls?: boolean;
     /** سرعت چرخه کامل نور، بر حسب میلی‌ثانیه */
     duration?: number;
 }
 
 export default function HeroNetworkBackground({
-    showControls = true,
     duration = 16000,
 }: HeroNetworkBackgroundProps) {
     const svgRef = useRef<SVGSVGElement>(null);
-    const [paused, setPaused] = useState(false);
-    const pausedRef = useRef(paused);
     const durationRef = useRef(duration);
 
-    useEffect(() => {
-        pausedRef.current = paused;
-    }, [paused]);
 
     useEffect(() => {
         durationRef.current = duration;
@@ -98,7 +90,7 @@ export default function HeroNetworkBackground({
         let animationFrame = 0;
 
         const frame = (now: number) => {
-            if (last && !pausedRef.current && !document.hidden && !reduceMotion.matches) {
+            if (last && !document.hidden && !reduceMotion.matches) {
                 elapsed += Math.min(now - last, 80);
             }
             last = now;
@@ -150,7 +142,7 @@ export default function HeroNetworkBackground({
     }, []);
 
     return (
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#050909] m-10" aria-hidden="true">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-transparent md:m-20 mx-10" aria-hidden="true">
             <svg
                 ref={svgRef}
                 viewBox="0 0 1672 941"
@@ -178,7 +170,7 @@ export default function HeroNetworkBackground({
                         </feComponentTransfer>
                     </filter>
                     <mask id="network-brand-mask" maskUnits="userSpaceOnUse" x="948" y="409" width="425" height="86" style={{ maskType: "luminance" }}>
-                        <image href="/images/hero/network-reference.png" x="0" y="0" width="1672" height="941" filter="url(#network-white-isolate)" />
+                        <image href="/images/hero/kardan-hero-transparent.png" x="0" y="0" width="1672" height="941" filter="url(#network-white-isolate)" />
                     </mask>
                     <linearGradient id="network-wave-gradient" gradientUnits="userSpaceOnUse" x1="-750" x2="0">
                         <stop stopColor="white" stopOpacity="0" />
@@ -203,7 +195,7 @@ export default function HeroNetworkBackground({
                     <mask id="network-exchange-mask"><rect width="1672" height="941" fill="url(#network-exchange-gradient)" /></mask>
                 </defs>
 
-                <image href="/images/hero/network-reference.png" x="0" y="0" width="1672" height="941" />
+                <image href="/images/hero/kardan-hero-transparent.png" x="0" y="0" width="1672" height="941" />
 
                 <g id="network-light" mask="url(#network-wave-mask)">
                     <g mask="url(#network-intensity-mask)">
@@ -244,22 +236,6 @@ export default function HeroNetworkBackground({
                     />
                 </g>
             </svg>
-
-            {showControls && (
-                <button
-                    type="button"
-                    aria-label={paused ? "ادامه حرکت" : "توقف حرکت"}
-                    aria-pressed={paused}
-                    onClick={() => setPaused((value) => !value)}
-                    className="pointer-events-auto absolute bottom-4 left-4 z-10 grid h-8 w-8 place-items-center rounded-full border border-[#e6c582]/20 bg-[#0a0e0e]/80 text-[#c6b78f]/60 opacity-60 transition hover:opacity-100 focus-visible:opacity-100"
-                >
-                    {paused ? (
-                        <svg viewBox="0 0 12 12" className="h-3 w-3" aria-hidden="true"><path fill="currentColor" d="M2 1 11 6 2 11Z" /></svg>
-                    ) : (
-                        <svg viewBox="0 0 12 12" className="h-3 w-3" aria-hidden="true"><path fill="currentColor" d="M2 1h3v10H2zM7 1h3v10H7z" /></svg>
-                    )}
-                </button>
-            )}
         </div>
     );
 }

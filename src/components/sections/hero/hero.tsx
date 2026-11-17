@@ -31,18 +31,104 @@ export default async function Hero() {
         <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-[#050909]">
 
             {/* Hero Background */}
-            <HeroNetworkBackground showControls={false} duration={20000}/>
-
+            <HeroNetworkBackground duration={20000}/>
             {/* Hero Main Content */}
-            <div className="relative z-10 flex min-h-0 flex-1 px-4">
-                {/* Existing Hero Content */}
+            <div className="relative z-10 flex flex-col min-h-0 flex-1 md:mx-40 md:mt-40 mt-30 mx-5 px-4">
+                <h1 className="text-2xl font-semibold text-gray-200">
+                    {t("title")}
+                </h1>
+                <p className="text-md text-gray-400 py-5">
+                    {t("description")}
+                </p>
             </div>
-
             {/* Bottom Cards */}
-            <div className="relative z-40 w-full px-4 pb-5">
-                {/* Existing Cards */}
-            </div>
+            {/*<div className="relative z-40 w-full px-4 pb-5">*/}
+            {/*    /!* Existing Cards *!/*/}
+            {/*</div>*/}
+            <div
+                className="
+                    relative
+                    z-40
+                    w-full
+                    px-4
+                    pb-5
+                    sm:px-5
+                    sm:pb-7
+                "
+            >
+                <div
+                    className="
+                        mx-auto
+                        grid
+                        w-full
+                        max-w-7xl
+                        grid-cols-1
+                        gap-3
+                        sm:grid-cols-3
+                        sm:gap-4
+                    "
+                >
+                    {items.map((item, index) => {
+                        const Icon = cardIcons[index] ?? Lightbulb;
 
+                        return (
+                            <HeroFooterCard
+                                key={index}
+                                className="
+                                    cursor-default
+                                    py-5
+                                    text-center
+                                    sm:py-5
+                                "
+                            >
+                                <div className="flex justify-center">
+                                    {/*<div*/}
+                                    {/*    className="*/}
+                                    {/*        mb-4*/}
+                                    {/*        flex*/}
+                                    {/*        h-10*/}
+                                    {/*        w-10*/}
+                                    {/*        items-center*/}
+                                    {/*        justify-center*/}
+                                    {/*        rounded-xl*/}
+                                    {/*        border*/}
+                                    {/*        border-[var(--color-secondary)]*/}
+                                    {/*        text-[var(--color-secondary)]*/}
+                                    {/*        transition-transform*/}
+                                    {/*        duration-300*/}
+                                    {/*        group-hover:scale-105*/}
+                                    {/*        sm:mb-5*/}
+                                    {/*        sm:h-11*/}
+                                    {/*        sm:w-11*/}
+                                    {/*    "*/}
+                                    {/*>*/}
+                                        {/*<Icon*/}
+                                        {/*    size={20}*/}
+                                        {/*    strokeWidth={1.6}*/}
+                                        {/*/>*/}
+                                    {/*</div>*/}
+
+
+                                    <h1 className="text-xl font-semibold text-gray-200 pt-5">
+                                        {item.title}
+                                    </h1>
+                                </div>
+
+                                <h3
+                                    className="
+                                        text-sm
+                                        font-semibold
+                                        text-[var(--color-text-muted)]
+                                        py-5
+                                    "
+                                >
+                                    {item.desc}
+                                </h3>
+                            </HeroFooterCard>
+                        );
+                    })}
+                </div>
+            </div>
         </section>
         // <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black">
         //     {/* Hero Background */}
@@ -212,86 +298,7 @@ export default async function Hero() {
         //     </div>
         //
         //     {/* Bottom Cards */}
-        //     <div
-        //         className="
-        //             relative
-        //             z-40
-        //             w-full
-        //             px-4
-        //             pb-5
-        //             sm:px-5
-        //             sm:pb-7
-        //         "
-        //     >
-        //         <div
-        //             className="
-        //                 mx-auto
-        //                 grid
-        //                 w-full
-        //                 max-w-7xl
-        //                 grid-cols-1
-        //                 gap-3
-        //                 sm:grid-cols-3
-        //                 sm:gap-4
-        //             "
-        //         >
-        //             {items.map((item, index) => {
-        //                 const Icon = cardIcons[index] ?? Lightbulb;
-        //
-        //                 return (
-        //                     <HeroFooterCard
-        //                         key={index}
-        //                         className="
-        //                             cursor-default
-        //                             py-4
-        //                             text-center
-        //                             sm:py-5
-        //                         "
-        //                     >
-        //                         <div className="flex justify-center">
-        //                             <div
-        //                                 className="
-        //                                     mb-4
-        //                                     flex
-        //                                     h-10
-        //                                     w-10
-        //                                     items-center
-        //                                     justify-center
-        //                                     rounded-xl
-        //                                     border
-        //                                     border-[var(--color-secondary)]
-        //                                     text-[var(--color-secondary)]
-        //                                     transition-transform
-        //                                     duration-300
-        //                                     group-hover:scale-105
-        //                                     sm:mb-5
-        //                                     sm:h-11
-        //                                     sm:w-11
-        //                                 "
-        //                             >
-        //                                 <Icon
-        //                                     size={20}
-        //                                     strokeWidth={1.6}
-        //                                 />
-        //                             </div>
-        //                         </div>
-        //
-        //                         <h3
-        //                             className="
-        //                                 text-sm
-        //                                 font-semibold
-        //                                 text-[var(--color-text-primary)]
-        //                                 sm:text-base
-        //                                 lg:text-lg
-        //                             "
-        //                         >
-        //                             {item.title}
-        //                         </h3>
-        //                     </HeroFooterCard>
-        //                 );
-        //             })}
-        //         </div>
-        //     </div>
+
         // </section>
     );
 }

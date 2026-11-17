@@ -17,15 +17,15 @@ export default function HeroFooterCard({
             group relative isolate overflow-hidden
             rounded-3xl
             border border-[var(--hero-accent)]/40
-            bg-[var(--hero-accent)]/[0.08]
+            bg-[var(--color-primary)]/[0.08]
             p-4
             shadow-[0_20px_80px_-20px_rgba(0,0,0,0.45)]
             backdrop-blur-md
             transition-all duration-1000 ease-out
             
             hover:-translate-y-1
-            hover:border-[var(--hero-accent)]/40
-            hover:bg-[var(--hero-accent)]/[0.12]
+            hover:border-[var(--color-primary)]/40
+            hover:bg-[var(--color-primary)]/[0.12]
             hover:shadow-[0_30px_100px_-20px_rgba(0,0,0,0.55)]
             
             ${className}`}
@@ -37,10 +37,10 @@ export default function HeroFooterCard({
                 -right-24 -top-24
                 h-48 w-48
                 rounded-full
-                bg-[var(--hero-accent)]/20
+                bg-[var(--color-primary)]/20
                 blur-3xl
                 transition-all duration-700
-                group-hover:bg-[var(--hero-accent-hover)]/50
+                group-hover:bg-[var(--color-primary)]/50
                 group-hover:scale-125
                 "
             />

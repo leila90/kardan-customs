@@ -111,6 +111,142 @@
       }
     ]
   },
+  "ExperienceSection": {
+    "brand": "Industries",
+    "title": "Understanding every industry,",
+    "subTitle": "is part of understanding every project.",
+    "description": "Choose the industry related to your project.",
+    "items": [
+      {
+        "id": "pharma",
+        "number": "01",
+        "title": "Pharmaceuticals & Raw Materials",
+        "eyebrow": "Pharmaceuticals & raw materials",
+        "heading": "Supply, documentation and permits coordination",
+        "description": "We review product specifications, sourcing documents and related requirements across finance, freight and customs procedures.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Pharmaceutical vials and laboratory equipment",
+        "tags": [
+          "Product specifications",
+          "Supply documents",
+          "Permits"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "mobile",
+        "number": "02",
+        "title": "Mobile & Communication Equipment",
+        "eyebrow": "Mobile and communication equipment",
+        "heading": "From order registration to reliable arrival",
+        "description": "We coordinate import requirements, identifiers, technical documents and clearance steps for communication equipment.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Smartphone and digital equipment",
+        "tags": [
+          "Product identifiers",
+          "Technical documents",
+          "Related permits"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "automotive",
+        "number": "03",
+        "title": "Passenger & Commercial Vehicles",
+        "eyebrow": "Passenger and commercial vehicles",
+        "heading": "Managing the details of vehicle imports",
+        "description": "We follow documentation, technical requirements and operational steps for passenger and commercial vehicle imports.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Modern vehicle",
+        "tags": [
+          "Vehicle documents",
+          "Technical requirements",
+          "Import process"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "digital",
+        "number": "04",
+        "title": "Digital Goods & Technology Equipment",
+        "eyebrow": "Digital goods and technology equipment",
+        "heading": "Precision in technology equipment details",
+        "description": "We carefully follow product classification, technical specifications and the documents and permits required for digital equipment.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Electronic circuit board",
+        "tags": [
+          "Product classification",
+          "Technical specifications",
+          "Import documents"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "machinery",
+        "number": "05",
+        "title": "Industrial Machinery & Equipment",
+        "eyebrow": "Industrial machinery and equipment",
+        "heading": "Technical coordination for specialist equipment",
+        "description": "We review machinery specifications, technical documents, valuation and entry requirements from sourcing through clearance.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Industrial machinery",
+        "tags": [
+          "Technical catalogue",
+          "Valuation",
+          "Permits"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "materials",
+        "number": "06",
+        "title": "Industrial Raw Materials",
+        "eyebrow": "Industrial raw materials",
+        "heading": "Clarity in raw-material sourcing",
+        "description": "We review material identity, safety and technical documents, and relevant legal requirements before goods enter the country.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Laboratory raw material samples",
+        "tags": [
+          "Material identification",
+          "Safety documents",
+          "Legal requirements"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "petrochemical",
+        "number": "07",
+        "title": "Petrochemical Products",
+        "eyebrow": "Petrochemical products",
+        "heading": "Specialist review across the petrochemical chain",
+        "description": "We review product specifications, grade, quality documents and freight and import requirements based on the shipment.",
+        "image": "/images/knowlegde/car.webp",
+        "imageAlt": "Industrial petrochemical facility",
+        "tags": [
+          "Product grade",
+          "Quality documents",
+          "Specialist freight"
+        ],
+        "action": "Explore projects in this industry"
+      },
+      {
+        "id": "medical",
+        "number": "08",
+        "title": "Medical Equipment",
+        "eyebrow": "Medical equipment",
+        "heading": "A precise route for medical equipment",
+        "description": "We follow technical documentation, registration requirements and specialist permits based on each product’s type and use.",
+        "image": "/images/knowlegde/medical.png",
+        "imageAlt": "Medical equipment",
+        "tags": [
+          "Technical documents",
+          "Registration & permits",
+          "Standards"
+        ],
+        "action": "Explore projects in this industry"
+      }
+    ]
+  },
   "ExperienceDomains": {
     "brand": "Kardan Customs",
     "title": "Our Experience Domains",

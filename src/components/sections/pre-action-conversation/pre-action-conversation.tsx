@@ -24,20 +24,25 @@ export default async function PreActionConversation() {
                         const Icon = cardIcons[index] ?? Lightbulb;
 
                         return (
-                            <GlassCard key={index} className={"text-center py-10"} >
-                                <div className={"flex justify-center"}>
+                            <div key={index}>
+                                <div className={"flex flex-row items-center"}>
                                     <div
-                                        className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--color-accent)] text-[var(--color-accent)] transition-transform duration-300 group-hover:scale-105">
-                                        <Icon size={21} strokeWidth={1.6}/>
+                                        className="flex h-11 w-11 items-center justify-center">
+                                        {/*<Icon size={21} strokeWidth={1.6}/>*/}
+                                        <p className={"items-center justify-center text-(--color-accent)"}>0{index+1}</p>
                                     </div>
+                                    <div className=" mr-2 h-px w-full bg-(--color-accent)" />
+
                                 </div>
-                                    <h3 className="text-base font-semibold text-[var(--color-text-primary)] sm:text-lg">
+                                <div className={"flex flex-col p-5"}>
+                                    <h3 className="text-base font-semibold text-(--color-text-primary) sm:text-lg">
                                         {item.title}
                                     </h3>
-                                    <p className="mt-3 text-sm leading-7 text-[var(--color-text-muted)]">
+                                    <p className="mt-3 text-sm leading-7 text-(--color-text-muted)">
                                         {item.desc}
                                     </p>
-                            </GlassCard>
+                                </div>
+                            </div>
                         );
                     })}
                 </div>

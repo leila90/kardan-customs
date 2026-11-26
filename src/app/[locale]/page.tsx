@@ -7,6 +7,7 @@ import RouteCta from "@/components/sections/route-cta/route-cta";
 import Solutions from "@/components/sections/solutions/solutions";
 import Hero from "@/components/sections/hero/hero";
 import RealCases from "@/components/sections/real-cases/real-cases";
+import ExperienceSection from "@/components/sections/experience/experience-section";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <HeroFooter />
             <PreActionConversation />
             <Solutions />
+            <ExperienceSection />
             <ExperienceDomains />
             <RealCases />
             <RouteCta />
